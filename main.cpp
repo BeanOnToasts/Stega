@@ -11,10 +11,22 @@ using namespace std;
 
 int main() {
     string fileName;
+    string message;
+    string key;
+
+    //sorry Ian I liked cout more than printf
     cout << "Enter the name of the file to be encoded" << endl;
-    cin >> fileName;
+    getline(cin, fileName);
+    cout << "Enter the message you want to encode" << endl;
+    getline(cin, message);
+    cout << "Enter the key you want to encode with" << endl;
+    getline(cin, key);
+
     string filePath = "../" + fileName + ".png";
-    Encoder encoder(filePath);
+
+    Encoder encoder(filePath, message, key);
+    string binary = encoder.convertToBin();
+    cout << binary << endl;
 
     return 0;
 }
