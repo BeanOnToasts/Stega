@@ -1,0 +1,21 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug",
+	"dir-cur-src" : "C:/Users/j17cr/5039CMD/Coursework",
+	"dir-top-bld" : "C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug",
+	"dir-top-src" : "C:/Users/j17cr/5039CMD/Coursework",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Program Files (x86)\\OpenCV\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/Coursework.dir"
+}

@@ -1,0 +1,20 @@
+# ninja log v6
+4	378	7615142645461973	build.ninja	c734bfdc795b589a
+207	256	7615140829591757	CMakeFiles/Coursework.dir/main.cpp.obj.modmap	220d20793ca75c72
+262	2237	7615140830139505	CMakeFiles/Coursework.dir/main.cpp.obj	36ba5f5f4dd20a68
+26	206	7615140827776479	CMakeFiles/Coursework.dir/main.cpp.obj.ddi	b3e0f95e7965a03
+2237	2424	7615140849890791	Coursework.exe	138ee9ae97681e88
+207	256	7615140829591757	CMakeFiles/Coursework.dir/CXX.dd	220d20793ca75c72
+207	256	7615140829591757	C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/Coursework.dir/CXXModules.json	220d20793ca75c72
+32	216	7615148867113515	CMakeFiles/Coursework.dir/main.cpp.obj.ddi	b3e0f95e7965a03
+217	268	7615148868955197	CMakeFiles/Coursework.dir/CXX.dd	220d20793ca75c72
+217	268	7615148868955197	C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/Coursework.dir/CXXModules.json	220d20793ca75c72
+217	268	7615148868955197	CMakeFiles/Coursework.dir/main.cpp.obj.modmap	220d20793ca75c72
+270	2477	7615148869485770	CMakeFiles/Coursework.dir/main.cpp.obj	36ba5f5f4dd20a68
+2477	2658	7615148891555828	Coursework.exe	138ee9ae97681e88
+2	174	7615153129414104	CMakeFiles/Coursework.dir/main.cpp.obj.ddi	b3e0f95e7965a03
+174	196	7615153131142083	CMakeFiles/Coursework.dir/CXX.dd	220d20793ca75c72
+174	196	7615153131142083	C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/Coursework.dir/CXXModules.json	220d20793ca75c72
+174	196	7615153131142083	CMakeFiles/Coursework.dir/main.cpp.obj.modmap	220d20793ca75c72
+197	2148	7615153131372083	CMakeFiles/Coursework.dir/main.cpp.obj	36ba5f5f4dd20a68
+2148	2303	7615153150875021	Coursework.exe	138ee9ae97681e88

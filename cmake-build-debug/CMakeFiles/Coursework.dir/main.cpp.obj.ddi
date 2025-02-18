@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\Coursework.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\j17cr\\5039CMD\\Coursework\\cmake-build-debug\\vc140.pdb",
+                "CMakeFiles\\Coursework.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}
