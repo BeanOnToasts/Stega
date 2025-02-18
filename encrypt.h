@@ -3,11 +3,11 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
-class Encryption {
+class Encrypt {
     public:
-    Encryption();
+    Encrypt();
     
-    ~Encryption();
+    ~Encrypt();
 };
 
 #endif //ENCRYPTION_H

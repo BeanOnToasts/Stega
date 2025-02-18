@@ -1,10 +1,10 @@
 #include <opencv2/opencv.hpp>
 
-#include "encryption.h"
+#include "encrypt.h"
 using namespace cv;
 
 int main() {
-    Encryption encryption;
+    Encrypt encrypt;
 
     return 0;
 }
