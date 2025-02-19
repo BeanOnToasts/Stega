@@ -8,9 +8,11 @@ class Encoder {
     private:
     string fileName;
     string filePath;
+    string newFilePath;
+
     string message;
-    Mat message_img;
     string binaryMessage;
+    Mat message_img;
 
     //these are private for security reasons i think
     string ConvertToBin() {
@@ -25,7 +27,7 @@ class Encoder {
         return binary;
     };
 
-    Mat EncodeImage() {
+    void EncodeImage() {
         //size_t is for indexing specifically which is cool i think
         size_t currentBit = 0;
         //check image is large enough to store the message
@@ -50,9 +52,8 @@ class Encoder {
                 }
             }
         }
-        string newFileName = "../" + fileName + "_encoded.png";;
-        imwrite(newFileName, message_img);
-        cout << "Message encoded into " << message_img << endl;
+        imwrite(newFilePath, message_img);
+        cout << "Message encoded into " << newFilePath << endl;
     }
 
     public:
@@ -62,18 +63,22 @@ class Encoder {
     message(encryptedMessage) {
 
         filePath = "../" + fileName + ".png";
-        Mat message_img = imread(filePath);
+        newFilePath = "../" + fileName + "_encoded.png";
+        message_img = imread(filePath);
+
         binaryMessage = ConvertToBin();
+
         if (message_img.empty()) {
-            cout << "Could not open or find the image, make sure the image is a png." << endl;
+            cout << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
         }
         else {
-            cout << "Opened file " << fileName << endl;
+            cout << "Opened file " << filePath << ", writing to " << newFilePath << endl;
             cout << "Message: " << message << endl;
         }
+        Mat encodedImage = message_img.clone();
+        imwrite(newFilePath, encodedImage);
     }
     void Encode() {
-        ConvertToBin();
         EncodeImage();
     }
 };
