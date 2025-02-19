@@ -23,9 +23,8 @@ int main() {
     cout << "Enter the key you want to encode with" << endl;
     getline(cin, key);
 
-    string filePath = "../" + fileName + ".png";
-
-    Encoder encoder(filePath, message, key);
+    Encoder encoder(fileName, message, key);
+    encoder.Encode();
 
     return 0;
 }
