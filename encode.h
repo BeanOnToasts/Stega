@@ -28,7 +28,7 @@ class Encoder {
     };
 
     void EncodeImage() {
-        //size_t is for indexing specifically which is cool i think
+        //size_t is for indexing specifically which is cool I think
         size_t currentBit = 0;
         //check image is large enough to store the message
         //iterate through rows and columns of pixels
@@ -39,7 +39,7 @@ class Encoder {
                     //check whether all the message is complete
                     if (currentBit < binaryMessage.size()) {
                         //check that LSB isn't already the correct value
-                        if ((message_img.at<Vec3b>(i, j)[k] & 1) != (binaryMessage[currentBit] - '0')) {
+                        if ((message_img.at<Vec3b>(i, j)[k] & 1) != binaryMessage[currentBit] - '0') {
                             //change the LSB if required
                             message_img.at<Vec3b>(i, j)[k] ^= 1;
                         }

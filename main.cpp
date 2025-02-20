@@ -8,7 +8,6 @@ using namespace std;
 #include "decode.h"
 #include "decrypt.h"
 
-
 int main() {
     string fileName;
     string message;
