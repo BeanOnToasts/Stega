@@ -23,6 +23,8 @@ int main() {
     getline(cin, key);
 
     Encoder encoder(fileName, message, key);
+    Decoder decoder(fileName, key);
+
     encoder.Encode();
 
     return 0;
