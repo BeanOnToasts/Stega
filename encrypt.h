@@ -3,11 +3,13 @@
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
-class Encrypt {
+class Encrypter {
+    private:
+    std::string key;
     public:
-    Encrypt();
+    Encrypter();
     
-    ~Encrypt();
+    ~Encrypter();
 };
 
 #endif //ENCRYPTION_H
