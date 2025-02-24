@@ -1,0 +1,49 @@
+#include "decode.h"
+string Decoder::ConvertFromBin(const string& binary) {
+  string encryptedMessage;
+  char tmp = 0;
+  //split into bytes
+  for (int i = 0; i < binary.length(); i += 8) {
+    tmp = 0;
+    //iterate through each bit
+    for (int j = i; j < (i+8); j++) {
+      //do an OR operation to change tmp into the character
+      if (binary[j] == '1') {
+        tmp |= 1 << (7-j%8);
+      }
+    }
+    encryptedMessage += tmp;
+  }
+  return encryptedMessage;
+}
+
+string Decoder::DecodeImage(Mat message_img) {
+  string binary;
+  string currentByte;
+  string currentBit;
+
+  bool delimiterFound = false;
+  const string delimiterCheck = "0010010000100100";
+  char currentTwoBits;
+
+  while (delimiterFound == false) {
+    for (int i=0; i < message_img.rows; ++i) {
+      for (int j=0; j < message_img.cols; ++j) {
+        for (int k=0; k < 3; ++k) {
+          int bit = message_img.at<Vec3b>(i, j)[k] & 1;
+          binary += bit ? "1" : "0";
+
+          if (binary.size() >= delimiterCheck.size() &&
+              binary.substr(binary.size() - delimiterCheck.size()) == delimiterCheck) {
+            delimiterFound = true;
+          }
+        }
+      }
+    }
+  }
+  return ConvertFromBin(binary);
+}
+
+void Decoder::CallDecode() {
+  DecodeImage(message_img);
+}
