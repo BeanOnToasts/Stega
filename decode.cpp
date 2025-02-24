@@ -41,9 +41,11 @@ string Decoder::DecodeImage(Mat message_img) {
       }
     }
   }
-  return ConvertFromBin(binary);
+  return binary;
 }
 
 void Decoder::CallDecode() {
-  DecodeImage(message_img);
+  string binary = DecodeImage(message_img);
+  string encryptedMessage = ConvertFromBin(binary);
+  cout << encryptedMessage << endl;
 }
