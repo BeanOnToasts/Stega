@@ -44,6 +44,22 @@ string Decoder::DecodeImage(Mat message_img) {
   return binary;
 }
 
+//use constructor to create the constants that will be used throughout the class
+Decoder::Decoder(const string& path, const string& keyVal) :
+fileName(path) {
+  //define the image paths and create image object
+  filePath = "../" + fileName + ".png";
+  newFilePath = "../" + fileName + "_encoded.png";
+  message_img = imread(filePath);
+
+  if (message_img.empty()) {
+    cout << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
+  }
+  else {
+    cout << "Opened file " << filePath << endl;
+  }
+}
+
 void Decoder::CallDecode() {
   string binary = DecodeImage(message_img);
   string encryptedMessage = ConvertFromBin(binary);
