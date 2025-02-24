@@ -1,6 +1,5 @@
 #ifndef DECODE_H
 #define DECODE_H
-#include <iostream>
 using namespace std;
 #include <opencv2/opencv.hpp>
 using namespace cv;
