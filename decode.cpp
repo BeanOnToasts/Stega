@@ -18,30 +18,24 @@ string Decoder::ConvertFromBin(const string& binary) {
 }
 
 string Decoder::DecodeImage(Mat message_img) {
-  string binary;
+  string binaryMessage;
   string currentByte;
   string currentBit;
 
   bool delimiterFound = false;
   const string delimiterCheck = "0010010000100100";
-  char currentTwoBits;
-
-  while (delimiterFound == false) {
     for (int i=0; i < message_img.rows; ++i) {
       for (int j=0; j < message_img.cols; ++j) {
         for (int k=0; k < 3; ++k) {
           int bit = message_img.at<Vec3b>(i, j)[k] & 1;
-          binary += bit ? "1" : "0";
-
-          if (binary.size() >= delimiterCheck.size() &&
-              binary.substr(binary.size() - delimiterCheck.size()) == delimiterCheck) {
-            delimiterFound = true;
-          }
+          binaryMessage += to_string(bit);
+          if (binaryMessage.size() >= delimiterCheck.size() &&
+              binaryMessage.substr(binaryMessage.size() - delimiterCheck.size()) == delimiterCheck) {
+              return binaryMessage.substr(0, binaryMessage.size() - delimiterCheck.size()); ;
         }
       }
     }
   }
-  return binary;
 }
 
 //use constructor to create the constants that will be used throughout the class
