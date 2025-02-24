@@ -1,18 +1,21 @@
 #ifndef DECODE_H
 #define DECODE_H
+#include <iostream>
+using namespace std;
+#include <opencv2/opencv.hpp>
+using namespace cv;
 
 class Decoder {
-    private:
-    string filePath;
-    public:
-    Decoder(const string& path) : filePath(path) {
-        Mat message_img = imread(filePath);
-        if (message_img.empty()) {
-            cout << "Could not open or find the image, make sure the image is a png." << endl;
-        }
-        else {
-            cout << "Opened file " << filePath << endl;
-        }
-    }
+string fileName;
+string filePath;
+string newFilePath;
+
+Mat message_img;
+
+string ConvertFromBin(const string& binary);
+string DecodeImage(Mat message_img);
+public:
+    Decoder(const string& path, const string& keyVal);
+    void CallDecode();
 };
 #endif //DECODE_H

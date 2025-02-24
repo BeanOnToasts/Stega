@@ -9,7 +9,9 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(Coursework main.cpp
         encrypt.h
         encode.h
+        encode.cpp
         decode.h
+        decode.cpp
         decrypt.h)
 
 target_link_libraries(Coursework ${OpenCV_LIBS})
