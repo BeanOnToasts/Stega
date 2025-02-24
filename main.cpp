@@ -22,10 +22,13 @@ int main() {
     cout << "Enter the key you want to encode with" << endl;
     getline(cin, key);
 
-    Encoder encoder(fileName, message, key);
-    Decoder decoder(fileName, key);
+    string newFile = "hacker_encoded";
 
-    encoder.Encode();
+    Encoder encoder(fileName, message, key);
+    Decoder decoder(newFile, key);
+
+    encoder.CallEncode();
+    decoder.CallDecode();
 
     return 0;
 }
