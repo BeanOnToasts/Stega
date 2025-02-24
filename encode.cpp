@@ -18,7 +18,7 @@ string Encoder::ConvertToBin(const string& message) {
         for (int i=0; i < message_img.rows; ++i) {
             //iterate through columns of pixels
             for (int j=0; j < message_img.cols; ++j) {
-                //iterate through RGB values
+                //iterate through BGR values
                 for (int k=0; k < 3; ++k) {
                     //check whether all the message is complete
                     if (bitIndex < binaryMessage.size()) {

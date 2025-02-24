@@ -21,21 +21,31 @@ string Decoder::DecodeImage(Mat message_img) {
   string binaryMessage;
   string currentByte;
   string currentBit;
+  string error = "No secret message found";
 
-  bool delimiterFound = false;
-  const string delimiterCheck = "0010010000100100";
-    for (int i=0; i < message_img.rows; ++i) {
-      for (int j=0; j < message_img.cols; ++j) {
-        for (int k=0; k < 3; ++k) {
-          int bit = message_img.at<Vec3b>(i, j)[k] & 1;
-          binaryMessage += to_string(bit);
-          if (binaryMessage.size() >= delimiterCheck.size() &&
-              binaryMessage.substr(binaryMessage.size() - delimiterCheck.size()) == delimiterCheck) {
-              return binaryMessage.substr(0, binaryMessage.size() - delimiterCheck.size()); ;
-        }
+  //define the delimiter string to stop searching when the full message is found
+  const string delimiter = "0010010000100100";
+  //iterate through rows of pixels
+  for (int i=0; i < message_img.rows; ++i) {
+    //iterate through columns of pixels
+    for (int j=0; j < message_img.cols; ++j) {
+      //iterate through BGR values
+      for (int k=0; k < 3; ++k) {
+        //create variable for current LSB
+        int bit = message_img.at<Vec3b>(i, j)[k] & 1;
+        //add bit to the binary message
+        binaryMessage += to_string(bit);
+        //check the right amount of bits have been discovered
+        if (binaryMessage.size() >= delimiter.size() &&
+          binaryMessage.substr(binaryMessage.size() - delimiter.size()) == delimiter) {
+          //return binary message when delimiter is found
+          return binaryMessage.substr(0, binaryMessage.size() - delimiter.size());
+          }
       }
     }
   }
+  //if delimiter is not found, return the error message
+  return error;
 }
 
 //use constructor to create the constants that will be used throughout the class
