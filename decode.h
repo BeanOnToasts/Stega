@@ -6,20 +6,16 @@ using namespace std;
 using namespace cv;
 
 class Decoder {
-private:
-    string fileName;
-    string filePath;
-    string newFilePath;
+string fileName;
+string filePath;
+string newFilePath;
 
-    Mat message_img;
+Mat message_img;
 
-    string ConvertFromBin(const string& binary);
-
-    string DecodeImage(Mat message_img);
-
+string ConvertFromBin(const string& binary);
+string DecodeImage(Mat message_img);
 public:
     Decoder(const string& path, const string& keyVal);
-
     void CallDecode();
 };
 #endif //DECODE_H

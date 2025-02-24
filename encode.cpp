@@ -40,6 +40,25 @@ string Encoder::ConvertToBin(const string& message) {
         cout << "Message encoded into " << newFilePath << endl;
     }
 
+//use constructor to create the constants that will be used throughout the class
+Encoder::Encoder(const string& path, const string& encryptedMessage, const string& keyVal) :
+fileName(path),
+message(encryptedMessage) {
+
+        //define the image paths and create image object
+        filePath = "../" + fileName + ".png";
+        newFilePath = "../" + fileName + "_encoded.png";
+        message_img = imread(filePath);
+
+
+        if (message_img.empty()) {
+            cout << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
+        }
+        else {
+            printf("Opened file %s, writing the message '%s' to %s\n",filePath.c_str(), message.c_str(), newFilePath.c_str());
+        }
+    }
+
     //public function to run the encoder
     void Encoder::CallEncode() {
         string binaryMessage = ConvertToBin(message);
