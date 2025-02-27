@@ -11,8 +11,9 @@ string newFilePath;
 
 Mat message_img;
 
-string ConvertFromBin(const string& binary);
-string DecodeImage(Mat message_img);
+static string ConvertFromBin(const string& binary);
+
+static string DecodeImage(Mat message_img);
 public:
     Decoder(const string& path, const string& keyVal);
     void CallDecode();
