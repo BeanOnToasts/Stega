@@ -62,7 +62,7 @@ fileName(path) {
   }
 
   if (not fileName.ends_with("_encoded.png")) {
-    newFilePath = fileName + "_encoded.png";
+    filePath = fileName + "_encoded.png";
   }
 
   message_img = imread(filePath);
