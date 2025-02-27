@@ -1,12 +1,15 @@
 #ifndef ENCRYPTION_H
 #define ENCRYPTION_H
-#include <opencv2/opencv.hpp>
-using namespace cv;
 
 class Encrypter {
+    //attributes
     std::string key;
 
-    public:
+    //private methods
+    string GenerateKey();
+
+    //public methods
+public:
     Encrypter();
 };
 
