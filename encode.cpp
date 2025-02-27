@@ -41,7 +41,7 @@ string Encoder::ConvertToBin(const string& message) {
     }
 
 //use constructor to create the constants that will be used throughout the class
-Encoder::Encoder(const string& path, const string& encryptedMessage, const string& keyVal) :
+Encoder::Encoder(const string& path, const string& encryptedMessage) :
 fileName(path),
 message(encryptedMessage) {
 

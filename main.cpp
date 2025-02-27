@@ -28,7 +28,10 @@ int main() {
         cout << "Enter the key you want to encode with" << endl;
         getline(cin, key);
 
-        Encoder encoder(fileName, message, key);
+        Encrypter encrypter(message);
+        encrypter.CallEncrypter();
+
+        Encoder encoder(fileName, message);
         encoder.CallEncode();
     }
     else if (option == 2) {

@@ -1,6 +1,7 @@
 #ifndef ENCODE_H
 #define ENCODE_H
 
+#include <iostream>
 #include <bitset>
 using namespace std;
 #include <opencv2/opencv.hpp>
@@ -21,7 +22,7 @@ class Encoder {
 
     //public methods
 public:
-    Encoder(const string& path, const string& encryptedMessage, const string& keyVal);
+    Encoder(const string& path, const string& encryptedMessage);
     void CallEncode();
 };
 #endif //ENCODE_H

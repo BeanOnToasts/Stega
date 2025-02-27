@@ -1,16 +1,24 @@
 #ifndef ENCRYPTION_H
 #define ENCRYPTION_H
 
+#include <iostream>
+using namespace std;
+
 class Encrypter {
     //attributes
-    std::string key;
+    string key;
+    const int key_size = 32;
+    string message;
 
     //private methods
-    string GenerateKey();
+    void GenerateKey();
+    // void StoreKey();
+    // string EncryptMessage(const string& message);
 
     //public methods
 public:
-    Encrypter();
+    Encrypter(const string& message);
+    void CallEncrypter();
 };
 
 #endif //ENCRYPTION_H
