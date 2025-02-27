@@ -12,6 +12,7 @@ add_executable(Coursework main.cpp
         encode.cpp
         decode.h
         decode.cpp
-        decrypt.h)
+        decrypt.h
+        encrypt.cpp)
 
 target_link_libraries(Coursework ${OpenCV_LIBS})

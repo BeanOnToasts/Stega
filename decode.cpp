@@ -1,4 +1,7 @@
 #include "decode.h"
+
+#include <iso646.h>
+
 string Decoder::ConvertFromBin(const string& binary) {
   string encryptedMessage;
   char tmp = 0;
@@ -51,9 +54,17 @@ string Decoder::DecodeImage(Mat message_img) {
 //use constructor to create the constants that will be used throughout the class
 Decoder::Decoder(const string& path, const string& keyVal) :
 fileName(path) {
-  //define the image paths and create image object
-  filePath = "../" + fileName + ".png";
-  newFilePath = "../" + fileName + "_encoded.png";
+  //define the image paths
+  fileName = "../" + fileName;
+
+  if (not fileName.ends_with(".png")) {
+    filePath = fileName + ".png";
+  }
+
+  if (not fileName.ends_with("_encoded.png")) {
+    newFilePath = fileName + "_encoded.png";
+  }
+
   message_img = imread(filePath);
 
   if (message_img.empty()) {

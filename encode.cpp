@@ -46,10 +46,19 @@ fileName(path),
 message(encryptedMessage) {
 
         //define the image paths and create image object
-        filePath = "../" + fileName + ".png";
-        newFilePath = "../" + fileName + "_encoded.png";
-        message_img = imread(filePath);
+        fileName = "../" + fileName;
 
+        if (not fileName.ends_with(".png")) {
+            filePath = fileName + ".png";
+            newFilePath = fileName + "_encoded.png";
+        }
+        else {
+            filePath = fileName;
+            fileName.replace(fileName.find(".png"),3, "");
+            newFilePath = fileName + "_encoded.png";
+        }
+
+        message_img = imread(filePath);
 
         if (message_img.empty()) {
             cout << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
