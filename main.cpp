@@ -41,6 +41,9 @@ int main() {
         Decoder decoder(fileName, key);
         decoder.CallDecode();
     }
+    else {
+        cout << "no" << endl;
+    }
 
     return 0;
 }

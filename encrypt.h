@@ -1,18 +1,22 @@
 #ifndef ENCRYPTION_H
 #define ENCRYPTION_H
 
+#include <random>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Encrypter {
     //attributes
-    string key;
-    const int key_size = 32;
+    static const int key_size = 32;
+    unsigned char key[key_size]; //unsigned char so it can't be negative as I only need 0-255
+    string key_filename;
+
     string message;
 
     //private methods
-    void GenerateKey();
-    // void StoreKey();
+    string GenerateKey();
+    void StoreKey(const string& key);
     // string EncryptMessage(const string& message);
 
     //public methods
