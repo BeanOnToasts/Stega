@@ -61,10 +61,10 @@ message(encryptedMessage) {
         message_img = imread(filePath);
 
         if (message_img.empty()) {
-            cout << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
+            cerr << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
         }
         else {
-            printf("Opened file %s, writing the message '%s' to %s\n",filePath.c_str(), message.c_str(), newFilePath.c_str());
+            printf("Opened file %s, writing the message to %s\n", filePath.c_str(), newFilePath.c_str());
         }
     }
 

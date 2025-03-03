@@ -11,7 +11,7 @@ using namespace std;
 int main() {
     string fileName;
     string message;
-    string key;
+    string encrypted_message;
     int option;
 
     //sorry Ian I liked cout more than printf
@@ -24,22 +24,22 @@ int main() {
         getline(cin, fileName);
         cout << "Enter the message you want to encode" << endl;
         getline(cin, message);
-        //key will be generated automatically eventually
-        cout << "Enter the key you want to encode with" << endl;
-        getline(cin, key);
 
         Encrypter encrypter(message);
-        encrypter.CallEncrypter();
+        encrypted_message = encrypter.CallEncrypter();
 
-        Encoder encoder(fileName, message);
+        Encoder encoder(fileName, encrypted_message);
         encoder.CallEncode();
     }
     else if (option == 2) {
         cout << "Enter the name of the file to be decoded" << endl;
         cin.ignore();
         getline(cin, fileName);
-        Decoder decoder(fileName, key);
+        Decoder decoder(fileName, message);
         decoder.CallDecode();
+    }
+    else {
+        cout << "no" << endl;
     }
 
     return 0;
