@@ -14,7 +14,6 @@ class Encrypter {
     string aes_key;
 
     string message;
-    string encrypted_message;
 
     //private methods
     string GenerateKey();
@@ -24,7 +23,7 @@ class Encrypter {
     //public methods
 public:
     Encrypter(const string& message);
-    void CallEncrypter();
+    string CallEncrypter();
 };
 
 #endif //ENCRYPTION_H
