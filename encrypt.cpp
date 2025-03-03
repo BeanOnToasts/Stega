@@ -20,7 +20,11 @@ string Encrypter::GenerateKey() {
 
 //store the key in a text file
 void Encrypter::StoreKey(const string& key) {
-    ofstream file(key_filename, ios::out | ios::trunc); //open file in write mode and overwrite existing file
+    string filePath = "../" + key_filename;
+    ofstream file(filePath, ios::out | ios::trunc); //open file in write mode and overwrite existing file
+    if (!file) {
+        cerr << "Can't open file " << key_filename << endl;
+    }
     file << key << endl;
     file.close();
 }
@@ -28,6 +32,7 @@ void Encrypter::StoreKey(const string& key) {
 
 void Encrypter::CallEncrypter() {
     StoreKey(GenerateKey());
+    cout << "Encrypted and key sent to " << key_filename << endl;
 }
 
 Encrypter::Encrypter(const string& message) :
