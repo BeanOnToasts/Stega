@@ -24,9 +24,6 @@ int main() {
         getline(cin, fileName);
         cout << "Enter the message you want to encode" << endl;
         getline(cin, message);
-        //key will be generated automatically eventually
-        cout << "Enter the key you want to encode with" << endl;
-        getline(cin, key);
 
         Encrypter encrypter(message);
         encrypter.CallEncrypter();

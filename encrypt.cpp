@@ -29,9 +29,20 @@ void Encrypter::StoreKey(const string& key) {
     file.close();
 }
 
+//encrypt message using the key
+string Encrypter::EncryptMessage(const string& message, const string& key) {
+    string encrypted_message;
+    for (size_t i = 0; i < message.size(); i++) {
+        encrypted_message[i] = message[i] + key[i % key_size];
+    }
+    cout << "Encrypted message: " << encrypted_message << endl;
+    return encrypted_message;
+}
 
 void Encrypter::CallEncrypter() {
-    StoreKey(GenerateKey());
+    aes_key = GenerateKey();
+    StoreKey(aes_key);
+    EncryptMessage(message, aes_key);
     cout << "Encrypted and key sent to " << key_filename << endl;
 }
 
