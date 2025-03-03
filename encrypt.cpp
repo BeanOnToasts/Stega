@@ -20,12 +20,14 @@ string Encrypter::GenerateKey() {
 
 //store the key in a text file
 void Encrypter::StoreKey(const string& key) {
-
+    ofstream file(key_filename, ios::out | ios::trunc); //open file in write mode and overwrite existing file
+    file << key << endl;
+    file.close();
 }
 
 
 void Encrypter::CallEncrypter() {
-
+    StoreKey(GenerateKey());
 }
 
 Encrypter::Encrypter(const string& message) :
