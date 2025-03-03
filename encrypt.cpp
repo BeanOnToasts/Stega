@@ -31,18 +31,19 @@ void Encrypter::StoreKey(const string& key) {
 
 //encrypt message using the key
 string Encrypter::EncryptMessage(const string& message, const string& key) {
-    string encrypted_message = message;
+    string tmp_encrypted_message = message;
     for (size_t i = 0; i < message.size(); i++) {
-        encrypted_message[i] = message[i] + key[i % key_size];
+        tmp_encrypted_message[i] = message[i] ^ key[i % key_size];
     }
-    cout << "Encrypted message: " << encrypted_message << endl;
-    return encrypted_message;
+    cout << "Encrypted message: " << tmp_encrypted_message << endl;
+    return tmp_encrypted_message;
 }
 
 void Encrypter::CallEncrypter() {
     aes_key = GenerateKey();
     StoreKey(aes_key);
-    EncryptMessage(message, aes_key);
+    encrypted_message = EncryptMessage(message, aes_key);
+    EncryptMessage(encrypted_message, aes_key);
     cout << "Encrypted and key sent to " << key_filename << endl;
 }
 

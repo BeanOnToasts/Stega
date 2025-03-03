@@ -14,6 +14,7 @@ class Encrypter {
     string aes_key;
 
     string message;
+    string encrypted_message;
 
     //private methods
     string GenerateKey();
