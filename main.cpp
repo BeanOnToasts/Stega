@@ -32,11 +32,17 @@ int main() {
         encoder.CallEncode();
     }
     else if (option == 2) {
+        string keyFileName;
         cout << "Enter the name of the file to be decoded" << endl;
         cin.ignore();
         getline(cin, fileName);
+        cout << "Enter the name of the file containing the decryption key" << endl;
+        getline(cin, keyFileName);
         Decoder decoder(fileName, message);
-        decoder.CallDecode();
+        encrypted_message = decoder.CallDecode();
+        Decrypter decrypter(encrypted_message,keyFileName);
+        message = decrypter.CallDecrypt();
+        cout << message << endl;
     }
     else {
         cout << "no" << endl;

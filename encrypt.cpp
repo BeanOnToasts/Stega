@@ -46,6 +46,6 @@ string Encrypter::CallEncrypter() {
 }
 
 Encrypter::Encrypter(const string& message) :
-    message(message) {
+message(message) {
 }
 

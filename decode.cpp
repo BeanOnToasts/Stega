@@ -75,8 +75,8 @@ fileName(path) {
   }
 }
 
-void Decoder::CallDecode() {
+string Decoder::CallDecode() {
   string binary = DecodeImage(message_img);
   string encryptedMessage = ConvertFromBin(binary);
-  cout << encryptedMessage << endl;
+  return encryptedMessage;
 }
