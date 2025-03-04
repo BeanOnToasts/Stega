@@ -1,11 +1,11 @@
 ninja_dyndep_version = 1.0
 build CMakeFiles\Coursework.dir\main.cpp.obj: dyndep
 
-build CMakeFiles\Coursework.dir\encode.cpp.obj: dyndep
+build CMakeFiles\Coursework.dir\encode\encode.cpp.obj: dyndep
 
-build CMakeFiles\Coursework.dir\decode.cpp.obj: dyndep
+build CMakeFiles\Coursework.dir\decode\decode.cpp.obj: dyndep
 
-build CMakeFiles\Coursework.dir\encrypt.cpp.obj: dyndep
+build CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj: dyndep
 
-build CMakeFiles\Coursework.dir\decrypt.cpp.obj: dyndep
+build CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj: dyndep
 

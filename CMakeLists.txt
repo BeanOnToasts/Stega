@@ -7,13 +7,13 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(Coursework main.cpp
-        encrypt.h
-        encode.h
-        encode.cpp
-        decode.h
-        decode.cpp
-        decrypt.h
-        encrypt.cpp
-        decrypt.cpp)
+        encrypt/encrypt.h
+        encode/encode.h
+        encode/encode.cpp
+        decode/decode.h
+        decode/decode.cpp
+        decrypt/decrypt.h
+        encrypt/encrypt.cpp
+        decrypt/decrypt.cpp)
 
 target_link_libraries(Coursework ${OpenCV_LIBS})

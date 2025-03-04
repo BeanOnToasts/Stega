@@ -3,10 +3,10 @@ using namespace cv;
 #include <iostream>
 using namespace std;
 
-#include "encode.h"
-#include "encrypt.h"
-#include "decode.h"
-#include "decrypt.h"
+#include "encode/encode.h"
+#include "encrypt/encrypt.h"
+#include "decode/decode.h"
+#include "decrypt/decrypt.h"
 
 int main() {
     string fileName;
