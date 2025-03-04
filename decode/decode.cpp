@@ -2,6 +2,10 @@
 
 #include <iso646.h>
 
+/*
+ * converts the given message from binary back into ASCII text by performing an OR operation
+ * on each character to alter the bits
+ */
 string Decoder::ConvertFromBin(const string& binary) {
   string encryptedMessage;
   char tmp = 0;
@@ -20,6 +24,10 @@ string Decoder::ConvertFromBin(const string& binary) {
   return encryptedMessage;
 }
 
+/*
+ * iterates through each pixel of the image and appends each bit to the end of the discovered binary message
+ * until the delimiter is discovered, then return the binary message
+ */
 string Decoder::DecodeImage(Mat message_img) {
   string binaryMessage;
   string currentByte;
@@ -51,7 +59,7 @@ string Decoder::DecodeImage(Mat message_img) {
   return error;
 }
 
-//use constructor to create the constants that will be used throughout the class
+//constructor, initialises file paths to images
 Decoder::Decoder(const string& path, const string& keyVal) :
 fileName(path) {
   //define the image paths
@@ -75,7 +83,10 @@ fileName(path) {
   }
 }
 
-string Decoder::CallDecode() {
+/*
+ * used for running the decoder as the methods are encapsulated for security purposes
+ */
+string Decoder::CallDecode() const {
   string binary = DecodeImage(message_img);
   string encryptedMessage = ConvertFromBin(binary);
   return encryptedMessage;

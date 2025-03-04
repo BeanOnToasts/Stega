@@ -1,6 +1,8 @@
 #include "encrypt.h"
 
-//generate a random AES-256 key
+/*
+ * Generates a random AES-256-style key using random entropy, it won't be true unless the device has a TRNG
+ */
 string Encrypter::GenerateKey() {
     random_device rd; //random entropy
     mt19937 gen(rd()); //random number with rd as the seed
@@ -12,14 +14,16 @@ string Encrypter::GenerateKey() {
     for (int i = 0; i < key_size; i++) {
         key[i] = dis(gen); //generate key
         char hex_byte[3]; //2 hex digits and null terminator
-        sprintf(hex_byte, "%02x", key[i]); //convert to hex
+        sprintf_s(hex_byte, "%02x", key[i]); //convert to hex
         key_str += hex_byte;
     }
     return key_str;
 }
 
-//store the key in a text file
-void Encrypter::StoreKey(const string& key) {
+/*
+ * writes the generated key to a text file
+ */
+void Encrypter::StoreKey(const string& key) const {
     string filePath = "../" + key_filename;
     ofstream file(filePath, ios::out | ios::trunc); //open file in write mode and overwrite existing file
     if (!file) {
@@ -29,7 +33,9 @@ void Encrypter::StoreKey(const string& key) {
     file.close();
 }
 
-//encrypt message using the key
+/*
+ * Encrypts the message by performing an XOR operation on the message using the key
+ */
 string Encrypter::EncryptMessage(const string& message, const string& key) {
     string encrypted_message = message;
     for (size_t i = 0; i < message.size(); i++) {
@@ -38,6 +44,9 @@ string Encrypter::EncryptMessage(const string& message, const string& key) {
     return encrypted_message;
 }
 
+/*
+ * used for running the encrypter as the methods are encapsulated for security purposes
+ */
 string Encrypter::CallEncrypter() {
     aes_key = GenerateKey();
     StoreKey(aes_key);
@@ -45,7 +54,8 @@ string Encrypter::CallEncrypter() {
     return EncryptMessage(message, aes_key);
 }
 
-Encrypter::Encrypter(const string& message) :
+//constructor
+Encrypter::Encrypter(const string& message) : key{},
 message(message) {
 }
 

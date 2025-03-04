@@ -16,7 +16,8 @@ class Decrypter {
 
     //private methods
     string OpenKey(string& file_name);
-    string DecryptMessage(const string& encrypted_message, const string& key);
+
+    string DecryptMessage(const string &encrypted_message, const string &key) const;
 
     //public methods
 public:

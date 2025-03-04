@@ -42,7 +42,7 @@ int main() {
         encrypted_message = decoder.CallDecode();
         Decrypter decrypter(encrypted_message,keyFileName);
         message = decrypter.CallDecrypt();
-        cout << message << endl;
+        cout << "Decrypted message: " << message << endl;
     }
     else {
         cout << "no" << endl;

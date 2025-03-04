@@ -8,7 +8,7 @@ using namespace std;
 
 class Encrypter {
     //attributes
-    static const int key_size = 32;
+    static constexpr int key_size = 32;
     unsigned char key[key_size]; //unsigned char so it can't be negative as I only need 0-255
     string key_filename = "aes_key.txt"; //the key will be saved to this file
     string aes_key;
@@ -17,8 +17,9 @@ class Encrypter {
 
     //private methods
     string GenerateKey();
-    void StoreKey(const string& key);
-    string EncryptMessage(const string& message, const string& key);
+    void StoreKey(const string& key) const;
+
+    static string EncryptMessage(const string& message, const string& key);
 
     //public methods
 public:

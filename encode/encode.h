@@ -17,12 +17,12 @@ class Encoder {
     Mat message_img;
 
     //private methods
-    string ConvertToBin(const string& message);
-    void EncodeImage(Mat message_img, const string& binaryMessage);
+    static string ConvertToBin(const string& message);
+    void EncodeImage(Mat message_img, const string& binaryMessage) const;
 
     //public methods
 public:
     Encoder(const string& path, const string& encryptedMessage);
-    void CallEncode();
+    void CallEncode() const;
 };
 #endif //ENCODE_H

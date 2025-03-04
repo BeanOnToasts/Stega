@@ -20,6 +20,6 @@ class Decoder {
     //public methods
 public:
     Decoder(const string& path, const string& keyVal);
-    string CallDecode();
+    string CallDecode() const;
 };
 #endif //DECODE_H
