@@ -5,6 +5,12 @@
 #include <fstream>
 using namespace std;
 
+/**
+ * @class Decrypter decrypt.h decrypt
+ * @brief Decrypts message using a key
+ * @short This class handles all aspects of the decryption of the message, including: retrieving the key from
+ * the key text file; and decrypting the given encrypted message
+ */
 class Decrypter {
     //attributes
     string key;

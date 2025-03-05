@@ -1,7 +1,11 @@
 #include "encode.h"
 
-/*
- * Converts a message to binary and adds the delimiter to the end for encoding. Uses the bitset function
+/**
+ * @brief Converts from ASCII to binary
+ * @short This method converts a message to binary and adds the delimiter to the end for encoding using
+ * the bitset function
+ * @param message is the ASCII message
+ * @return The binary message
  */
 string Encoder::ConvertToBin(const string& message) {
     string binary;
@@ -12,9 +16,12 @@ string Encoder::ConvertToBin(const string& message) {
     return binary;
 }
 
-/*
- * iterates through each pixel of the image and the binary message and alters the least significant bit
- * of each colour value (BGR) to be the same as the current bit in the binary message
+/**
+ * @brief Encodes a message into an image
+ * @short This method iterates through each pixel of the image and the binary message and alters the least
+ * significant bit of each colour value (BGR) to be the same as the current bit in the binary message
+ * @param message_img is the image to encode
+ * @param binaryMessage is the message to be encoded
  */
 void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
     //size_t is for indexing specifically which is cool I think
@@ -46,7 +53,13 @@ void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
     cout << "Message encoded into " << newFilePath << endl;
 }
 
-//constructor, initialises file paths to image
+/**
+ * @brief Constructor
+ * @short This constructor initialises the file paths of the image to encode and the image to write to, and
+ * throws an error if the file is not found
+ * @param path is the name of the file
+ * @param encryptedMessage is the message to be encoded
+ */
 Encoder::Encoder(const string& path, const string& encryptedMessage) :
 fileName(path),
 message(encryptedMessage) {
@@ -74,8 +87,9 @@ message(encryptedMessage) {
         }
     }
 
-/*
- * used for running the encoder as the methods are encapsulated for security purposes
+/**
+ * @brief Runs private encoder methods
+ * @short This method is used to run the methods which are encapsulated for security purposes
  */
 void Encoder::CallEncode() const {
         string binaryMessage = ConvertToBin(message);

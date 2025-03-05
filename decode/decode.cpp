@@ -2,9 +2,12 @@
 
 #include <iso646.h>
 
-/*
- * converts the given message from binary back into ASCII text by performing an OR operation
- * on each character to alter the bits
+/**
+ * @brief Converts from binary to ASCII
+ * @short Converts the given message from binary back into ASCII text by performing an OR operation on each
+ * character to alter the bits
+ * @param binary is the binary message
+ * @return the encrypted message decoded from the binary
  */
 string Decoder::ConvertFromBin(const string& binary) {
   string encryptedMessage;
@@ -24,9 +27,12 @@ string Decoder::ConvertFromBin(const string& binary) {
   return encryptedMessage;
 }
 
-/*
- * iterates through each pixel of the image and appends each bit to the end of the discovered binary message
- * until the delimiter is discovered, then return the binary message
+/**
+ * @brief Decodes the message from LSB of RGB values in the image
+ * @short iterates through each pixel of the image and appends each bit to the end of the discovered binary
+ * message until the delimiter is discovered, then return the binary message
+ * @param message_img is the image containing the message
+ * @return Extracted binary message
  */
 string Decoder::DecodeImage(Mat message_img) {
   string binaryMessage;
@@ -59,8 +65,12 @@ string Decoder::DecodeImage(Mat message_img) {
   return error;
 }
 
-//constructor, initialises file paths to images
-Decoder::Decoder(const string& path, const string& keyVal) :
+/**
+ * @brief Constructor
+ * @short Initialises the file path to the encoded image and returns an error if the file is not found
+ * @param path is the name of the file
+ */
+Decoder::Decoder(const string& path) :
 fileName(path) {
   //define the image paths
   fileName = "../" + fileName;
@@ -83,8 +93,10 @@ fileName(path) {
   }
 }
 
-/*
- * used for running the decoder as the methods are encapsulated for security purposes
+/**
+ * @brief Runs private decoder methods
+ * @short This method is used to run the methods which are encapsulated for security purposes
+ * @return The discovered message
  */
 string Decoder::CallDecode() const {
   string binary = DecodeImage(message_img);

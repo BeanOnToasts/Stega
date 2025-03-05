@@ -3,8 +3,12 @@
 #include <string>
 #include <opencv2/imgproc.hpp>
 
-/*
- * opens the specified file and returns the key found inside
+/**
+ * @brief Opens a file and returns a key
+ * @short This method opens a text file as an ifstream object, where the first line will be read and used as a key.
+ * If no file is found with the name specified, an error is raised
+ * @param file_name is name of the file
+ * @return discovered key
  */
 string Decrypter::OpenKey(string &file_name) {
     if (not file_name.ends_with(".txt")) {
@@ -21,8 +25,14 @@ string Decrypter::OpenKey(string &file_name) {
     return foundKey;
 }
 
-/*
- * Decrypts the message by performing an XOR operation on the encrypted message using the key
+
+/**
+ * @brief Decrypts the message using the key
+ * @short This method decrypts an encrypted message by performing an XOR operation on the encrypted message
+ * and the key, then writing each bit to the decrypted message
+ * @param encrypted_message is the encrypted message
+ * @param key is the key used to encrypt
+ * @return decrypted message
  */
 string Decrypter::DecryptMessage(const string &encrypted_message, const string &key) const {
     string message = encrypted_message;
@@ -32,8 +42,10 @@ string Decrypter::DecryptMessage(const string &encrypted_message, const string &
     return message;
 }
 
-/*
- * used for running the decrypter as the methods are encapsulated for security purposes
+/**
+ * @brief Runs private decrypter methods
+ * @short This method is used to run the methods which are encapsulated for security purposes
+ * @return The decrypted message
  */
 string Decrypter::CallDecrypt() {
     key = OpenKey(fileName);
@@ -41,10 +53,11 @@ string Decrypter::CallDecrypt() {
     return message;
 }
 
-//constructor
+/**
+ * @brief Constructor
+ * @param encrypted_message is the encrypted message
+ * @param key_file is the key used to encrypt
+ */
 Decrypter::Decrypter(const string& encrypted_message, const string& key_file) : key_size(0),
     fileName(key_file), encryptedMessage(encrypted_message) {
 }
-
-
-

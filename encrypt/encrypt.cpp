@@ -1,7 +1,10 @@
 #include "encrypt.h"
 
-/*
- * Generates a random AES-256-style key using random entropy, it won't be true unless the device has a TRNG
+/**
+ * @brief Generates a random key
+ * @short This method generates a random AES-256-style key using random entropy, it won't be true unless the device has
+ * a TRNG, so most devices will create PRNs
+ * @return The randomly generated key
  */
 string Encrypter::GenerateKey() {
     random_device rd; //random entropy
@@ -20,8 +23,11 @@ string Encrypter::GenerateKey() {
     return key_str;
 }
 
-/*
- * writes the generated key to a text file
+/**
+ * @brief Writes a generated key to a text file
+ * @short This method creates a file and writes the provided key to it, overwriting any existing keys in files
+ * with the same name. An error is returned if the file cannot be opened (e.g. permission error)
+ * @param key is the key to write
  */
 void Encrypter::StoreKey(const string& key) const {
     string filePath = "../" + key_filename;
@@ -33,8 +39,13 @@ void Encrypter::StoreKey(const string& key) const {
     file.close();
 }
 
-/*
- * Encrypts the message by performing an XOR operation on the message using the key
+/**
+ * @brief Encrypts a message using a key
+ * @short This method encrypts a message by performing an XOR operation on the message and the key, then
+ * writing each bit to the encrypted message
+ * @param message is the message to encrypt
+ * @param key is the key to encrypt with
+ * @return The encrypted message
  */
 string Encrypter::EncryptMessage(const string& message, const string& key) {
     string encrypted_message = message;
@@ -44,8 +55,10 @@ string Encrypter::EncryptMessage(const string& message, const string& key) {
     return encrypted_message;
 }
 
-/*
- * used for running the encrypter as the methods are encapsulated for security purposes
+/**
+ * @brief Runs private encrypter methods
+ * @short This method is used to run the methods which are encapsulated for security purposes
+ * @return The encrypted message
  */
 string Encrypter::CallEncrypter() {
     aes_key = GenerateKey();
@@ -54,7 +67,10 @@ string Encrypter::CallEncrypter() {
     return EncryptMessage(message, aes_key);
 }
 
-//constructor
+/**
+ * @brief Constructor
+ * @param message is the message to encrypt
+ */
 Encrypter::Encrypter(const string& message) : key{},
 message(message) {
 }

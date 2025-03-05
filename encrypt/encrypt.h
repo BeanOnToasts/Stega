@@ -6,6 +6,12 @@
 #include <fstream>
 using namespace std;
 
+/**
+ * @class Encrypter encrypt.h encrypt
+ * @brief Encrypts a message using a key
+ * @short This class handles all the methods used to generate and store a random key, and to use the key to
+ * encrypt a message
+ */
 class Encrypter {
     //attributes
     static constexpr int key_size = 32;

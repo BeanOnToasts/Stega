@@ -5,6 +5,12 @@ using namespace std;
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
+/**
+ * @class Decoder decode.h decode
+ * @brief Extracts message from an encoded image
+ * @short This class handles all the methods used to extract messages out of encoded images and convert the
+ * extracted binary back into readable ASCII
+ */
 class Decoder {
     //attributes
     string fileName;
@@ -19,7 +25,7 @@ class Decoder {
 
     //public methods
 public:
-    Decoder(const string& path, const string& keyVal);
+    Decoder(const string& path);
     string CallDecode() const;
 };
 #endif //DECODE_H

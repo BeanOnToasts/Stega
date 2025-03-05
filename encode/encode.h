@@ -7,6 +7,12 @@ using namespace std;
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
+/**
+ * @class Encoder encode.h encode
+ * @brief Converts a message to binary and encodes it into an image
+ * @short This class handles all the methods used to convert messages to binary and encode the binary message
+ * into an image in the LSB of each GBR value of each pixel
+ */
 class Encoder {
     //atributes
     string fileName;
