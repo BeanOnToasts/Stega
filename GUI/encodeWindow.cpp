@@ -10,7 +10,6 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    setLayout(layout);
     setMinimumSize(300, 300);
     resize(400, 300);
 
@@ -70,8 +69,8 @@ void EncodeWindow::displayImage(const QString &path) const {
 
 /**
  * @brief runs encode function
- * @short this method ensures that both a message and an image are present, then runs the encryption and encoding of the
- * image. For use on a button press. Displays where the encoded image is located after it is created
+ * @short this method ensures that both a message and an image are present, then runs the encryption and encoding
+ * of the image. For use on a button press. Displays where the encoded image is located after it is created
  */
 void EncodeWindow::encodeMessage() {
 

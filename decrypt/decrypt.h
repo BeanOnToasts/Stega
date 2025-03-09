@@ -27,7 +27,7 @@ class Decrypter {
 
     //public methods
 public:
-    string CallDecrypt();
+    string CallDecrypt() const;
     Decrypter(const string& encrypted_message, const string& key_file);
 };
 #endif //DECRYPT_H

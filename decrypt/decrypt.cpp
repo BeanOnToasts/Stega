@@ -4,29 +4,6 @@
 #include <opencv2/imgproc.hpp>
 
 /**
- * @brief Opens a file and returns a key
- * @short This method opens a text file as an ifstream object, where the first line will be read and used as a key.
- * If no file is found with the name specified, an error is raised
- * @param file_name is name of the file
- * @return discovered key
- */
-string Decrypter::OpenKey(string &file_name) {
-    if (not file_name.ends_with(".txt")) {
-        file_name += ".txt";
-    }
-    file_name = "../"+file_name;
-    string foundKey;
-    ifstream file(file_name);
-    if (!file) {
-        cerr << "File " << file_name << " does not exist." << endl;
-    }
-    getline(file, foundKey);
-    key_size = foundKey.size();
-    return foundKey;
-}
-
-
-/**
  * @brief Decrypts the message using the key
  * @short This method decrypts an encrypted message by performing an XOR operation on the encrypted message
  * and the key, then writing each bit to the decrypted message
@@ -47,10 +24,8 @@ string Decrypter::DecryptMessage(const string &encrypted_message, const string &
  * @short This method is used to run the methods which are encapsulated for security purposes
  * @return The decrypted message
  */
-string Decrypter::CallDecrypt() {
-    key = OpenKey(fileName);
-    message = DecryptMessage(encryptedMessage,key);
-    return message;
+string Decrypter::CallDecrypt() const {
+    return DecryptMessage(encryptedMessage, key);
 }
 
 /**
@@ -60,4 +35,13 @@ string Decrypter::CallDecrypt() {
  */
 Decrypter::Decrypter(const string& encrypted_message, const string& key_file) : key_size(0),
     fileName(key_file), encryptedMessage(encrypted_message) {
+    //open key file and read key
+    ifstream file(key_file);
+    if (!file) {
+        cerr << "Error: Could not open key file: " << key_file << endl;
+        return;
+    }
+
+    getline(file, key);
+    key_size = key.size();
 }

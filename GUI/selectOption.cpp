@@ -73,7 +73,7 @@ void SelectOption::onEncodeClicked() {
  * @brief opens decode window
  */
 void SelectOption::onDecodeClicked() {
-    dWindow = new decodeWindow();
+    dWindow = new DecodeWindow();
     dWindow->show();
     this->close();
 }

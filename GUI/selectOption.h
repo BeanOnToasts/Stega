@@ -17,7 +17,7 @@ class SelectOption final : public QWidget {
     QPushButton *encodeButton;
     QPushButton *decodeButton;
     EncodeWindow *eWindow;
-    decodeWindow *dWindow;
+    DecodeWindow *dWindow;
 
     public:
     explicit SelectOption(QWidget *parent = nullptr);
