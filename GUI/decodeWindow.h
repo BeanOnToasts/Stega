@@ -1,16 +1,14 @@
-//
-// Created by j17cr on 09/03/2025.
-//
-
 #ifndef DECODEWINDOW_H
 #define DECODEWINDOW_H
 
+#include <QLabel>
+#include <QVBoxLayout>
 
+class decodeWindow : public QWidget {
+    Q_OBJECT
 
-class decodeWindow {
-
+public:
+    explicit decodeWindow(QWidget *parent = nullptr);
 };
 
-
-
-#endif //DECODEWINDOW_H
+#endif // DECODEWINDOW_H

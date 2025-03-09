@@ -9,3 +9,9 @@ build CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj: dyndep
 
 build CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj: dyndep
 
+build CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj: dyndep
+
+build CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj: dyndep
+
+build CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj: dyndep
+

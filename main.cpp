@@ -4,12 +4,13 @@ using namespace cv;
 using namespace std;
 
 #include <QApplication>
-#include <QLabel>
 
 #include "encode/encode.h"
 #include "encrypt/encrypt.h"
 #include "decode/decode.h"
 #include "decrypt/decrypt.h"
+
+#include "GUI/selectOption.h"
 
 int main(int argc, char *argv[]) {
     string fileName;
@@ -17,10 +18,12 @@ int main(int argc, char *argv[]) {
     string encrypted_message;
     int option;
 
-    QApplication a(argc, argv);
-    QLabel label("Hello CUEH!", nullptr);
-    label.resize(500, 500);
-    label.show();
+    QApplication app(argc, argv);
+    SelectOption window;
+    window.resize(400,300);
+    window.show();
+
+    return app.exec();
 
     //sorry Ian I liked cout more than printf
     cout << "Would you like to encode [1] or decode [2] a message?" << endl;
@@ -55,6 +58,4 @@ int main(int argc, char *argv[]) {
     else {
         cout << "no" << endl;
     }
-
-    return QApplication::exec();
 }

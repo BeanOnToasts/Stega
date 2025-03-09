@@ -47,14 +47,23 @@ cmake_ninja_workdir = C$:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\
 #############################################
 # Order-only phony target for Coursework
 
-build cmake_object_order_depends_target_Coursework: phony || .
+build cmake_object_order_depends_target_Coursework: phony || Coursework_autogen Coursework_autogen\mocs_compilation.cpp Coursework_autogen\timestamp Coursework_autogen_timestamp_deps
+
+build CMakeFiles\Coursework.dir\Coursework_autogen\mocs_compilation.cpp.obj: CXX_COMPILER__Coursework_unscanned_Debug C$:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\mocs_compilation.cpp || cmake_object_order_depends_target_Coursework
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  OBJECT_DIR = CMakeFiles\Coursework.dir
+  OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\Coursework_autogen
+  TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
+  TARGET_PDB = Coursework.pdb
 
 build CMakeFiles\Coursework.dir\main.cpp.obj.ddi: CXX_SCAN__Coursework_Debug C$:\Users\j17cr\5039CMD\Coursework\main.cpp || cmake_object_order_depends_target_Coursework
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\Coursework.dir\main.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\main.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\main.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\main.cpp.obj.ddi.i
 
@@ -62,7 +71,7 @@ build CMakeFiles\Coursework.dir\main.cpp.obj: CXX_COMPILER__Coursework_scanned_D
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\main.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -74,7 +83,7 @@ build CMakeFiles\Coursework.dir\encode\encode.cpp.obj.ddi: CXX_SCAN__Coursework_
   DEP_FILE = CMakeFiles\Coursework.dir\encode\encode.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\encode\encode.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\encode\encode.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\encode\encode.cpp.obj.ddi.i
 
@@ -82,7 +91,7 @@ build CMakeFiles\Coursework.dir\encode\encode.cpp.obj: CXX_COMPILER__Coursework_
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\encode\encode.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\encode
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -94,7 +103,7 @@ build CMakeFiles\Coursework.dir\decode\decode.cpp.obj.ddi: CXX_SCAN__Coursework_
   DEP_FILE = CMakeFiles\Coursework.dir\decode\decode.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\decode\decode.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\decode\decode.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\decode\decode.cpp.obj.ddi.i
 
@@ -102,7 +111,7 @@ build CMakeFiles\Coursework.dir\decode\decode.cpp.obj: CXX_COMPILER__Coursework_
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\decode\decode.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\decode
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -114,7 +123,7 @@ build CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj.ddi: CXX_SCAN__Coursewor
   DEP_FILE = CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj.ddi.i
 
@@ -122,7 +131,7 @@ build CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj: CXX_COMPILER__Coursewor
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\encrypt
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -134,7 +143,7 @@ build CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj.ddi: CXX_SCAN__Coursewor
   DEP_FILE = CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj.ddi.i
 
@@ -142,7 +151,7 @@ build CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj: CXX_COMPILER__Coursewor
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\decrypt
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -154,7 +163,7 @@ build CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj.ddi: CXX_SCAN__Coursewo
   DEP_FILE = CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj.ddi.i
 
@@ -162,7 +171,7 @@ build CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj: CXX_COMPILER__Coursewo
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\GUI
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -174,7 +183,7 @@ build CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj.ddi: CXX_SCAN__Coursewo
   DEP_FILE = CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj.ddi.i
 
@@ -182,7 +191,7 @@ build CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj: CXX_COMPILER__Coursewo
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\GUI
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -194,7 +203,7 @@ build CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj.ddi: CXX_SCAN__Coursewo
   DEP_FILE = CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj.ddi.d
   DYNDEP_INTERMEDIATE_FILE = CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj.ddi
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJ_FILE = CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj
   PREPROCESSED_OUTPUT_FILE = CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj.ddi.i
 
@@ -202,7 +211,7 @@ build CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj: CXX_COMPILER__Coursewo
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DYNDEP_MODULE_MAP_FILE = CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj.modmap
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
-  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
+  INCLUDES = -external:I"C:\Program Files (x86)\OpenCV\include" -external:IC:\Users\j17cr\5039CMD\Coursework\cmake-build-debug\Coursework_autogen\include -external:IC:\Qt\6.8.2\msvc2022_64\include\QtCore -external:IC:\Qt\6.8.2\msvc2022_64\include -external:IC:\Qt\6.8.2\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.8.2\msvc2022_64\include\QtGui -external:IC:\Qt\6.8.2\msvc2022_64\include\QtWidgets -external:W0
   OBJECT_DIR = CMakeFiles\Coursework.dir
   OBJECT_FILE_DIR = CMakeFiles\Coursework.dir\GUI
   TARGET_COMPILE_PDB = CMakeFiles\Coursework.dir\
@@ -219,7 +228,7 @@ build CMakeFiles\Coursework.dir\CXX.dd | C$:\Users\j17cr\5039CMD\Coursework\cmak
 #############################################
 # Link the executable Coursework.exe
 
-build Coursework.exe: CXX_EXECUTABLE_LINKER__Coursework_Debug CMakeFiles\Coursework.dir\main.cpp.obj CMakeFiles\Coursework.dir\encode\encode.cpp.obj CMakeFiles\Coursework.dir\decode\decode.cpp.obj CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj | C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_calib3d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_core4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_features2d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_flann4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_gapi4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_highgui4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_imgcodecs4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_imgproc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ml4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_objdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_photo4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_stitching4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_video4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_videoio4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_aruco4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_bgsegm4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_bioinspired4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ccalib4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_datasets4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn_objdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn_superres4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dpm4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_face4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_fuzzy4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_hfs4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_img_hash4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_intensity_transform4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_line_descriptor4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_mcc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_optflow4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_phase_unwrapping4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_plot4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_quality4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_rapid4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_reg4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_rgbd4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_saliency4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_shape4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_signal4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_stereo4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_structured_light4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_superres4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_surface_matching4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_text4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_tracking4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_videostab4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_wechat_qrcode4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xfeatures2d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ximgproc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xobjdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xphoto4100d.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Cored.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Guid.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgetsd.lib
+build Coursework.exe: CXX_EXECUTABLE_LINKER__Coursework_Debug CMakeFiles\Coursework.dir\Coursework_autogen\mocs_compilation.cpp.obj CMakeFiles\Coursework.dir\main.cpp.obj CMakeFiles\Coursework.dir\encode\encode.cpp.obj CMakeFiles\Coursework.dir\decode\decode.cpp.obj CMakeFiles\Coursework.dir\encrypt\encrypt.cpp.obj CMakeFiles\Coursework.dir\decrypt\decrypt.cpp.obj CMakeFiles\Coursework.dir\GUI\selectOption.cpp.obj CMakeFiles\Coursework.dir\GUI\encodeWindow.cpp.obj CMakeFiles\Coursework.dir\GUI\decodeWindow.cpp.obj | C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_calib3d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_core4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_features2d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_flann4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_gapi4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_highgui4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_imgcodecs4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_imgproc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ml4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_objdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_photo4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_stitching4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_video4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_videoio4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_aruco4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_bgsegm4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_bioinspired4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ccalib4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_datasets4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn_objdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dnn_superres4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_dpm4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_face4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_fuzzy4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_hfs4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_img_hash4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_intensity_transform4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_line_descriptor4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_mcc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_optflow4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_phase_unwrapping4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_plot4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_quality4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_rapid4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_reg4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_rgbd4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_saliency4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_shape4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_signal4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_stereo4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_structured_light4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_superres4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_surface_matching4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_text4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_tracking4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_videostab4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_wechat_qrcode4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xfeatures2d4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_ximgproc4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xobjdetect4100d.lib C$:\Program$ Files$ (x86)\OpenCV\x64\vc17\lib\opencv_xphoto4100d.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Cored.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Guid.lib C$:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgetsd.lib || Coursework_autogen Coursework_autogen_timestamp_deps
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_calib3d4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_core4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_dnn4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_features2d4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_flann4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_gapi4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_highgui4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_imgcodecs4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_imgproc4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_ml4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_objdetect4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_photo4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_stitching4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_video4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_videoio4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_aruco4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_bgsegm4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_bioinspired4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_ccalib4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_datasets4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_dnn_objdetect4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_dnn_superres4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_dpm4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_face4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_fuzzy4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_hfs4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_img_hash4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_intensity_transform4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_line_descriptor4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_mcc4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_optflow4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_phase_unwrapping4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_plot4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_quality4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_rapid4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_reg4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_rgbd4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_saliency4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_shape4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_signal4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_stereo4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_structured_light4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_superres4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_surface_matching4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_text4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_tracking4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_videostab4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_wechat_qrcode4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_xfeatures2d4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_ximgproc4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_xobjdetect4100d.lib"  "C:\Program Files (x86)\OpenCV\x64\vc17\lib\opencv_xphoto4100d.lib"  C:\Qt\6.8.2\msvc2022_64\lib\Qt6Cored.lib  C:\Qt\6.8.2\msvc2022_64\lib\Qt6Guid.lib  C:\Qt\6.8.2\msvc2022_64\lib\Qt6Widgetsd.lib  mpr.lib  userenv.lib  d3d11.lib  dxgi.lib  dxguid.lib  d3d12.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -255,6 +264,35 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for Coursework_autogen_timestamp_deps
+
+build Coursework_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for Coursework_autogen
+
+build Coursework_autogen: phony CMakeFiles\Coursework_autogen Coursework_autogen\timestamp Coursework_autogen\mocs_compilation.cpp Coursework_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for Coursework_autogen\timestamp
+
+build Coursework_autogen\timestamp Coursework_autogen\mocs_compilation.cpp | ${cmake_ninja_workdir}Coursework_autogen\timestamp ${cmake_ninja_workdir}Coursework_autogen\mocs_compilation.cpp: CUSTOM_COMMAND C$:\Qt\6.8.2\msvc2022_64\bin\moc.exe C$:\Qt\6.8.2\msvc2022_64\bin\uic.exe || Coursework_autogen_timestamp_deps
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\j17cr\5039CMD\Coursework\cmake-build-debug && C:\Users\j17cr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E cmake_autogen C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/Coursework_autogen.dir/AutogenInfo.json Debug && C:\Users\j17cr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E touch C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/Coursework_autogen/timestamp && C:\Users\j17cr\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile C:/Users/j17cr/5039CMD/Coursework C:/Users/j17cr/5039CMD/Coursework C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/Coursework_autogen/deps C:/Users/j17cr/5039CMD/Coursework/cmake-build-debug/CMakeFiles/d/78faa363c67a3f8634f5f3b6065891c65741238e2f6c45bb81f3ae21aa741091.d"
+  DESC = Automatic MOC and UIC for target Coursework
+  depfile = CMakeFiles\d\78faa363c67a3f8634f5f3b6065891c65741238e2f6c45bb81f3ae21aa741091.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Phony custom command for CMakeFiles\Coursework_autogen
+
+build CMakeFiles\Coursework_autogen | ${cmake_ninja_workdir}CMakeFiles\Coursework_autogen: phony Coursework_autogen\timestamp || Coursework_autogen_timestamp_deps
+
 # =============================================================================
 # Target aliases.
 
@@ -288,9 +326,16 @@ build C$:\Program$ Files$ (x86)\OpenCV\OpenCVConfig-version.cmake C$:\Program$ F
 
 
 #############################################
+# Clean additional files.
+
+build CMakeFiles\clean.additional: CLEAN_ADDITIONAL
+  CONFIG = Debug
+
+
+#############################################
 # Clean all the built files.
 
-build clean: CLEAN
+build clean: CLEAN CMakeFiles\clean.additional
 
 
 #############################################

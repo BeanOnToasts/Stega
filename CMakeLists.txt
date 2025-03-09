@@ -11,6 +11,10 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_PREFIX_PATH "C:/Qt/6.8.2/msvc2022_64")
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
 add_executable(Coursework main.cpp
         encrypt/encrypt.h
         encode/encode.h
