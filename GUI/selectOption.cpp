@@ -10,8 +10,8 @@ SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
     setMinimumSize(300, 300);
     resize(400, 300);
 
-    QFont titleFont("Ariel", 16, QFont::Bold);
-    QFont buttonFont("Ariel", 14);
+    const QFont titleFont("Ariel", 16, QFont::Bold);
+    const QFont buttonFont("Ariel", 14);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 

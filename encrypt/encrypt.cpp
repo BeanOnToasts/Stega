@@ -64,6 +64,7 @@ string Encrypter::CallEncrypter() {
     aes_key = GenerateKey();
     StoreKey(aes_key);
     cout << "Encrypted and key sent to " << key_filename << endl;
+    cout << EncryptMessage(message,aes_key) << endl;
     return EncryptMessage(message, aes_key);
 }
 

@@ -104,6 +104,7 @@ void EncodeWindow::encodeMessage() {
 
     //tell user it worked
     QMessageBox::information(this, "Success", "Message successfully encoded to: " + QString::fromStdString(newPath));
+    QMessageBox::information(this,"Key","Key Sent to aes_key.txt");
 
     //quit when finished
     QApplication::quit();
