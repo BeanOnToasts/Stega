@@ -10,24 +10,29 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    setMinimumSize(300, 300);
-    resize(400, 300);
+    setMinimumSize(320, 200);
+    setMaximumSize(1600, 1000);
+    resize(1200, 750);
 
     messageInput = new QLineEdit(this);
     messageInput->setPlaceholderText("Enter message to encode...");
+    messageInput->setProperty("class", "displayText");
     layout->addWidget(messageInput);
 
     selectImageButton = new QPushButton("Select Image", this);
     layout->addWidget(selectImageButton);
+    selectImageButton->setProperty("class", "selectButton");
     connect(selectImageButton, &QPushButton::clicked, this, &EncodeWindow::selectImage);
 
     selectedImageLabel = new QLabel(this);
     selectedImageLabel->setAlignment(Qt::AlignCenter);
     selectedImageLabel->setText("Select an image to encode");
+    selectedImageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     selectedImageLabel->setStyleSheet("border: 2px dashed gray; padding: 10px;");
     layout->addWidget(selectedImageLabel);
 
     encodeButton = new QPushButton("Encode", this);
+    encodeButton->setProperty("class", "encodeButton");
     layout->addWidget(encodeButton);
     connect(encodeButton, &QPushButton::clicked, this, &EncodeWindow::encodeMessage);
 
@@ -64,7 +69,10 @@ void EncodeWindow::displayImage(const QString &path) const {
     const QImage qimg(img.data, img.cols, img.rows, img.step, QImage::Format_RGB888);
 
     //display the image
-    selectedImageLabel->setPixmap(QPixmap::fromImage(qimg).scaled(380, 280, Qt::KeepAspectRatio));
+    QSize labelSize = selectedImageLabel->size();
+    QPixmap pixmap = QPixmap::fromImage(qimg).scaled(labelSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+    selectedImageLabel->setPixmap(pixmap);
 }
 
 /**

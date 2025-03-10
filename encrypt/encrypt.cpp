@@ -50,7 +50,7 @@ void Encrypter::StoreKey(const string& key) const {
 string Encrypter::EncryptMessage(const string& message, const string& key) {
     string encrypted_message = message;
     for (size_t i = 0; i < message.size(); i++) {
-        encrypted_message[i] = message[i] ^ key[i % key_size];
+        encrypted_message[i] = message[i] ^ key[i % key.length()];
     }
     return encrypted_message;
 }

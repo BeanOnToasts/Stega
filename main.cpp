@@ -4,6 +4,8 @@ using namespace cv;
 using namespace std;
 
 #include <QApplication>
+#include <QFile>
+#include <QDebug>
 
 #include "encode/encode.h"
 #include "encrypt/encrypt.h"
@@ -12,6 +14,19 @@ using namespace std;
 
 #include "GUI/selectOption.h"
 
+
+//loads the stylesheet
+void ApplyStyleSheet(QApplication &app) {
+    QFile file("../styles.qss");
+    if (file.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(file.readAll());
+        app.setStyleSheet(styleSheet);
+        file.close();
+    } else {
+        qDebug() << "Failed to load stylesheet!";
+    }
+}
+
 int main(int argc, char *argv[]) {
     string fileName;
     string message;
@@ -19,8 +34,9 @@ int main(int argc, char *argv[]) {
     int option;
 
     QApplication app(argc, argv);
+    ApplyStyleSheet(app);
+
     SelectOption window;
-    window.resize(400,300);
     window.show();
 
     return app.exec();

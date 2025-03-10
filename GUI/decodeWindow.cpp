@@ -5,26 +5,44 @@ DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    setMinimumSize(300, 300);
-    resize(400, 300);
+    setMinimumSize(320, 200);
+    setMaximumSize(1600, 1000);
+    resize(1200, 750);
 
     selectKeyButton = new QPushButton("Select Key File", this);
+    selectKeyButton->setProperty("class", "selectButton");
     layout->addWidget(selectKeyButton);
     connect(selectKeyButton, &QPushButton::clicked, this, &DecodeWindow::selectKey);
 
+    selectedKeyLabel = new QLabel(this);
+    selectedKeyLabel->setMaximumHeight(30);
+    selectedKeyLabel->setAlignment(Qt::AlignTop | Qt::AlignCenter);
+    selectedKeyLabel->setText("Please select a decryption key...");
+    selectedKeyLabel->setProperty("class", "displayText");
+    layout->addWidget(selectedKeyLabel);
+
     selectImageButton = new QPushButton("Select Image", this);
+    selectImageButton->setProperty("class", "selectButton");
     layout->addWidget(selectImageButton);
     connect(selectImageButton, &QPushButton::clicked, this, &DecodeWindow::selectImage);
 
     selectedImageLabel = new QLabel(this);
     selectedImageLabel->setAlignment(Qt::AlignCenter);
     selectedImageLabel->setText("Select an image to encode");
-    selectedImageLabel->setStyleSheet("border: 2px dashed gray; padding: 10px;");
+    selectedImageLabel->setProperty("class", "displayText");
     layout->addWidget(selectedImageLabel);
 
     decodeButton = new QPushButton("Decode", this);
+    decodeButton->setProperty("class", "decodeButton");
     layout->addWidget(decodeButton);
     connect(decodeButton, &QPushButton::clicked, this, &DecodeWindow::decodeMessage);
+
+    decryptedMessageLabel = new QLabel(this);
+    decryptedMessageLabel->setWordWrap(true);
+    decryptedMessageLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    decryptedMessageLabel->setText("Decrypted message will appear here...");
+    decryptedMessageLabel->setProperty("class", "displayText");
+    layout->addWidget(decryptedMessageLabel);
 
     setLayout(layout);
 }
@@ -35,10 +53,13 @@ DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
  */
 void DecodeWindow::selectKey() {
     keyPath = QFileDialog::getOpenFileName(this, "Select Key File", "../", "Text Files (*.txt)");
-    if (!keyPath.isEmpty()) {
-        qDebug() << "Key file selected: " << keyPath;
-    } else {
-        qDebug() << "No key file selected.";
+    QFile file(keyPath);
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        QString key = in.readLine(); // Read the first line
+        file.close();
+
+        selectedKeyLabel->setText("Key: " + key);
     }
 }
 
@@ -100,6 +121,7 @@ void DecodeWindow::decodeMessage() {
     //if no message was found
     if (encryptedMessage == "Loud incorrect buzzer sound") {
         qDebug() << "No secret message found in the image.";
+        decryptedMessageLabel->setText("No secret message found.");
         return;
     }
 
@@ -108,6 +130,6 @@ void DecodeWindow::decodeMessage() {
     string decryptedMessage = decrypter.CallDecrypt();
 
     //display decrypted message
-    QMessageBox::information(this, "Decoded Message", QString::fromStdString(decryptedMessage));
+    decryptedMessageLabel->setText(QString::fromStdString(decryptedMessage));
 }
 

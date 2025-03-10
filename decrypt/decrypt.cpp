@@ -14,7 +14,7 @@
 string Decrypter::DecryptMessage(const string &encrypted_message, const string &key) const {
     string message = encrypted_message;
     for (size_t i = 0; i < encrypted_message.size(); i++) {
-        message[i] = encrypted_message[i] ^ key[i % key_size];
+        message[i] = encrypted_message[i] ^ key[i % key.length()];
     }
     return message;
 }

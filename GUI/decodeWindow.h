@@ -7,10 +7,12 @@ using namespace std;
 #include <opencv2/opencv.hpp>
 using namespace cv;
 
+#include <QPushButton>
+#include <QLineEdit>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QPushButton>
 #include <QFileDialog>
+#include <QApplication>
 #include <QMessageBox>
 
 #include "../decode/decode.h"
@@ -22,7 +24,9 @@ class DecodeWindow final : public QWidget {
     QPushButton *selectImageButton;
     QPushButton *selectKeyButton;
     QPushButton *decodeButton;
+    QLabel *decryptedMessageLabel;
     QLabel *selectedImageLabel;
+    QLabel *selectedKeyLabel;
     QString imagePath;
     QString keyPath;
     void displayImage(const QString &path) const;

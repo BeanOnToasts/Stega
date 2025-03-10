@@ -7,11 +7,12 @@
  */
 SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
     setWindowTitle("Steganography Tool");
-    setMinimumSize(300, 300);
-    resize(400, 300);
+
+    setMinimumSize(320, 200);
+    setMaximumSize(1600, 1000);
+    resize(1200, 750);
 
     const QFont titleFont("Ariel", 16, QFont::Bold);
-    const QFont buttonFont("Ariel", 14);
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
@@ -20,34 +21,10 @@ SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
     titleLabel->setAlignment(Qt::AlignCenter);
 
     encodeButton = new QPushButton("Encode", this);
-    encodeButton->setFont(buttonFont);
-    encodeButton->setStyleSheet(
-        "QPushButton {"
-        "background-color: #256100;"
-        "color: white;"
-        "border: 7px solid #256100;"
-        "border-radius: 7px;"
-        "padding: 10px;"
-        "}"
-        "QPushButton:hover {"
-        "border-color: #66c928;"
-        "}"
-        );
+    encodeButton->setProperty("class", "encodeButton");
 
     decodeButton = new QPushButton("Decode", this);
-    decodeButton->setFont(buttonFont);
-    decodeButton->setStyleSheet(
-    "QPushButton {"
-    "background-color: #e34400;"
-    "color: white;"
-    "border: 7px solid #e34400;"
-    "border-radius: 7px;"
-    "padding: 10px;"
-    "}"
-    "QPushButton:hover {"
-    "border-color: #ff9061;"
-    "}"
-    );
+    decodeButton->setProperty("class", "decodeButton");
 
     layout->addWidget(titleLabel);
     layout->addSpacing(20);
