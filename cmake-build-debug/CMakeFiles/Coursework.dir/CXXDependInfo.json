@@ -13,7 +13,13 @@
 	"forward-modules-from-target-dirs" : [],
 	"include-dirs" : 
 	[
-		"C:\\Program Files (x86)\\OpenCV\\include"
+		"C:\\Program Files (x86)\\OpenCV\\include",
+		"Coursework_autogen\\include",
+		"C:\\Qt\\6.8.2\\msvc2022_64\\include\\QtCore",
+		"C:\\Qt\\6.8.2\\msvc2022_64\\include",
+		"C:\\Qt\\6.8.2\\msvc2022_64\\mkspecs\\win32-msvc",
+		"C:\\Qt\\6.8.2\\msvc2022_64\\include\\QtGui",
+		"C:\\Qt\\6.8.2\\msvc2022_64\\include\\QtWidgets"
 	],
 	"language" : "CXX",
 	"linked-target-dirs" : [],

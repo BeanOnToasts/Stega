@@ -38,7 +38,7 @@ string Decoder::DecodeImage(Mat message_img) {
   string binaryMessage;
   string currentByte;
   string currentBit;
-  string error = "No secret message found";
+  string error = "Loud incorrect buzzer sound";
 
   //define the delimiter string to stop searching when the full message is found
   const string delimiter = "0010010000100100";
@@ -72,24 +72,14 @@ string Decoder::DecodeImage(Mat message_img) {
  */
 Decoder::Decoder(const string& path) :
 fileName(path) {
-  //define the image paths
-  fileName = "../" + fileName;
 
-  if (not fileName.ends_with(".png")) {
-    filePath = fileName + ".png";
-  }
-
-  if (not fileName.ends_with("_encoded.png")) {
-    filePath = fileName + "_encoded.png";
-  }
-
-  message_img = imread(filePath);
+  message_img = imread(fileName);
 
   if (message_img.empty()) {
-    cerr << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
+    cerr << "Could not open or find " << fileName << endl;
   }
   else {
-    cout << "Opened file " << filePath << endl;
+    cout << "Opened file " << fileName << endl;
   }
 }
 
@@ -99,7 +89,6 @@ fileName(path) {
  * @return The discovered message
  */
 string Decoder::CallDecode() const {
-  string binary = DecodeImage(message_img);
-  string encryptedMessage = ConvertFromBin(binary);
-  return encryptedMessage;
+  const string binary = DecodeImage(message_img);
+  return ConvertFromBin(binary);
 }

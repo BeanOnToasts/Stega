@@ -1,0 +1,48 @@
+.selectButton {
+    background-color: #4d7ae3;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #4d7ae3;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.selectButton:hover {
+    font-weight: bold;
+    border-color: #7da1f5;
+}
+
+.encodeButton {
+    background-color: #256100;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #256100;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.encodeButton:hover {
+    font-weight: bold;
+    border-color: #66c928;
+}
+
+.decodeButton {
+    background-color: #b85000;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #b85000;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.decodeButton:hover {
+    font-weight: bold;
+    border-color: #ff8400;
+}
+
+.displayText {
+    font-size: 14px;
+    color: white;
+    border: 1px dashed gray;
+    padding: 5px;
+}

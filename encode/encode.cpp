@@ -65,15 +65,13 @@ fileName(path),
 message(encryptedMessage) {
 
         //define the image paths and create image object
-        fileName = "../" + fileName;
-
         if (not fileName.ends_with(".png")) {
             filePath = fileName + ".png";
             newFilePath = fileName + "_encoded.png";
         }
         else {
             filePath = fileName;
-            fileName.replace(fileName.find(".png"),3, "");
+            fileName.replace(fileName.find(".png"),4, "");
             newFilePath = fileName + "_encoded.png";
         }
 

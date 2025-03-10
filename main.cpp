@@ -3,16 +3,43 @@ using namespace cv;
 #include <iostream>
 using namespace std;
 
+#include <QApplication>
+#include <QFile>
+#include <QDebug>
+
 #include "encode/encode.h"
 #include "encrypt/encrypt.h"
 #include "decode/decode.h"
 #include "decrypt/decrypt.h"
 
-int main() {
+#include "GUI/selectOption.h"
+
+
+//loads the stylesheet
+void ApplyStyleSheet(QApplication &app) {
+    QFile file("../styles.qss");
+    if (file.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(file.readAll());
+        app.setStyleSheet(styleSheet);
+        file.close();
+    } else {
+        qDebug() << "Failed to load stylesheet!";
+    }
+}
+
+int main(int argc, char *argv[]) {
     string fileName;
     string message;
     string encrypted_message;
     int option;
+
+    QApplication app(argc, argv);
+    ApplyStyleSheet(app);
+
+    SelectOption window;
+    window.show();
+
+    return app.exec();
 
     //sorry Ian I liked cout more than printf
     cout << "Would you like to encode [1] or decode [2] a message?" << endl;
@@ -38,7 +65,7 @@ int main() {
         getline(cin, fileName);
         cout << "Enter the name of the file containing the decryption key" << endl;
         getline(cin, keyFileName);
-        Decoder decoder(fileName, message);
+        Decoder decoder(fileName);
         encrypted_message = decoder.CallDecode();
         Decrypter decrypter(encrypted_message,keyFileName);
         message = decrypter.CallDecrypt();
@@ -47,6 +74,4 @@ int main() {
     else {
         cout << "no" << endl;
     }
-
-    return 0;
 }
