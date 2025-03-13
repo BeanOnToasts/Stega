@@ -40,6 +40,20 @@
     border-color: #ff8400;
 }
 
+.negativeButton {
+    background-color: #910f00;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #910f00;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.negativeButton:hover {
+    font-weight: bold;
+    border-color: #a62b1e;
+}
+
 .displayText {
     font-size: 14px;
     color: white;

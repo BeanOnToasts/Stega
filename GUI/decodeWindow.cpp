@@ -1,4 +1,5 @@
 #include "decodeWindow.h"
+#include "selectOption.h"
 
 DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
     setWindowTitle("Steganography Tool");
@@ -44,6 +45,11 @@ DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
     decryptedMessageLabel->setProperty("class", "displayText");
     layout->addWidget(decryptedMessageLabel);
 
+    backButton = new QPushButton("Back to Menu", this);
+    backButton->setProperty("class", "negativeButton");
+    layout->addWidget(backButton);
+    connect(backButton, &QPushButton::clicked, this, &DecodeWindow::backToMenu);
+
     setLayout(layout);
 }
 
@@ -81,7 +87,7 @@ void DecodeWindow::selectImage() {
  * @param path is the file path of the image
  */
 void DecodeWindow::displayImage(const QString &path) const {
-    cv::Mat img = imread(path.toStdString());
+    cv::Mat img = cv::imread(path.toStdString());
 
     if (img.empty()) {
         qDebug() << "Failed to load image: " << path;
@@ -116,7 +122,7 @@ void DecodeWindow::decodeMessage() {
 
     //decode image
     Decoder decoder(imagePath.toStdString());
-    string encryptedMessage = decoder.CallDecode();
+    std::string encryptedMessage = decoder.CallDecode();
 
     //if no message was found
     if (encryptedMessage == "Loud incorrect buzzer sound") {
@@ -127,9 +133,15 @@ void DecodeWindow::decodeMessage() {
 
     //decrypt message
     Decrypter decrypter(encryptedMessage, keyPath.toStdString());
-    string decryptedMessage = decrypter.CallDecrypt();
+    std::string decryptedMessage = decrypter.CallDecrypt();
 
     //display decrypted message
     decryptedMessageLabel->setText(QString::fromStdString(decryptedMessage));
 }
 
+void DecodeWindow::backToMenu() {
+    //return to select option screen when finished
+    selectOption = new SelectOption();
+    selectOption->show();
+    this->close();
+}

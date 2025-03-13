@@ -27,7 +27,6 @@ SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
     decodeButton->setProperty("class", "decodeButton");
 
     layout->addWidget(titleLabel);
-    layout->addSpacing(20);
     layout->addWidget(encodeButton);
     layout->addWidget(decodeButton);
     layout->setAlignment(Qt::AlignCenter);
@@ -35,6 +34,11 @@ SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
 
     connect(encodeButton, &QPushButton::clicked, this, &SelectOption::onEncodeClicked);
     connect(decodeButton, &QPushButton::clicked, this, &SelectOption::onDecodeClicked);
+
+    quitButton = new QPushButton("Quit Application", this);
+    quitButton->setProperty("class", "negativeButton");
+    layout->addWidget(quitButton);
+    connect(quitButton, &QPushButton::clicked, this, &SelectOption::onQuitClicked);
 }
 
 /**
@@ -53,4 +57,8 @@ void SelectOption::onDecodeClicked() {
     dWindow = new DecodeWindow();
     dWindow->show();
     this->close();
+}
+
+void SelectOption::onQuitClicked() {
+    QApplication::quit();
 }

@@ -1,11 +1,9 @@
 #ifndef ENCODE_H
 #define ENCODE_H
 
-#include <iostream>
 #include <bitset>
-using namespace std;
+#include <string>
 #include <opencv2/opencv.hpp>
-using namespace cv;
 
 /**
  * @class Encoder encode.h encode
@@ -15,20 +13,20 @@ using namespace cv;
  */
 class Encoder {
     //atributes
-    string fileName;
-    string filePath;
-    string newFilePath;
+    std::string fileName;
+    std::string filePath;
+    std::string newFilePath;
 
-    string message;
-    Mat message_img;
+    std::string message;
+    cv::Mat message_img;
 
     //private methods
-    static string ConvertToBin(const string& message);
-    void EncodeImage(Mat message_img, const string& binaryMessage) const;
+    static std::string ConvertToBin(const std::string& message);
+    void EncodeImage(cv::Mat message_img, const std::string& binaryMessage) const;
 
     //public methods
 public:
-    Encoder(const string& path, const string& encryptedMessage);
+    Encoder(const std::string& path, const std::string& encryptedMessage);
     void CallEncode() const;
 };
 #endif //ENCODE_H

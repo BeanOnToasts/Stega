@@ -1,4 +1,5 @@
 #include "encodeWindow.h"
+#include "selectOption.h"
 
 /**
  * @brief constructor
@@ -19,9 +20,26 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     messageInput->setProperty("class", "displayText");
     layout->addWidget(messageInput);
 
+    generateKeyButton = new QPushButton("Generate a Key", this);
+    generateKeyButton->setProperty("class", "selectButton");
+    layout->addWidget(generateKeyButton);
+    connect(generateKeyButton, &QPushButton::clicked, this, &EncodeWindow::generateKey);
+
+    selectKeyButton = new QPushButton("Select a Key", this);
+    selectKeyButton->setProperty("class", "selectButton");
+    layout->addWidget(selectKeyButton);
+    connect(selectKeyButton, &QPushButton::clicked, this, &EncodeWindow::selectKey);
+
+    selectedKeyLabel = new QLabel(this);
+    selectedKeyLabel->setMaximumHeight(30);
+    selectedKeyLabel->setAlignment(Qt::AlignTop | Qt::AlignCenter);
+    selectedKeyLabel->setText("Please select an encryption key...");
+    selectedKeyLabel->setProperty("class", "displayText");
+    layout->addWidget(selectedKeyLabel);
+
     selectImageButton = new QPushButton("Select Image", this);
-    layout->addWidget(selectImageButton);
     selectImageButton->setProperty("class", "selectButton");
+    layout->addWidget(selectImageButton);
     connect(selectImageButton, &QPushButton::clicked, this, &EncodeWindow::selectImage);
 
     selectedImageLabel = new QLabel(this);
@@ -36,7 +54,36 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     layout->addWidget(encodeButton);
     connect(encodeButton, &QPushButton::clicked, this, &EncodeWindow::encodeMessage);
 
+    backButton = new QPushButton("Back to Menu", this);
+    backButton->setProperty("class", "negativeButton");
+    layout->addWidget(backButton);
+    connect(backButton, &QPushButton::clicked, this, &EncodeWindow::backToMenu);
+
+    layout->setAlignment(Qt::AlignCenter);
     setLayout(layout);
+}
+
+void EncodeWindow::generateKey() {
+    Encrypter encrypter;
+    key = QString::fromStdString(encrypter.CallKeyGen());
+    selectedKeyLabel->setText("Key: " + key);
+    generateKeyButton->hide();
+    layout()->removeWidget(generateKeyButton);
+    delete generateKeyButton;
+    generateKeyButton = nullptr; //delete the button once used
+    QMessageBox::information(this, "Key", "Key Sent to aes_key.txt");
+}
+
+void EncodeWindow::selectKey() {
+    keyPath = QFileDialog::getOpenFileName(this, "Select Key File", "../", "Text Files (*.txt)");
+    QFile file(keyPath);
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        key = in.readLine(); // Read the first line
+        file.close();
+
+        selectedKeyLabel->setText("Key: " + key);
+    }
 }
 
 /**
@@ -57,7 +104,7 @@ void EncodeWindow::selectImage() {
  * @param path is the file path of the image
  */
 void EncodeWindow::displayImage(const QString &path) const {
-    Mat img = imread(path.toStdString());
+    cv::Mat img = cv::imread(path.toStdString());
 
     if (img.empty()) {
         qDebug() << "Failed to load image: " << path;
@@ -81,7 +128,6 @@ void EncodeWindow::displayImage(const QString &path) const {
  * of the image. For use on a button press. Displays where the encoded image is located after it is created
  */
 void EncodeWindow::encodeMessage() {
-
     //makes sure there is a message and image
     if (imagePath.isEmpty()) {
         QMessageBox::warning(this, "Error", "Please select an image first.");
@@ -95,24 +141,32 @@ void EncodeWindow::encodeMessage() {
     }
 
     //convert to std::string for encryption
-    string imgPath = imagePath.toStdString();
-    string msg = message.toStdString();
+    std::string imgPath = imagePath.toStdString();
+    std::string msg = message.toStdString();
 
     //encrypt the message
-    Encrypter encrypter(msg);
-    string encryptedMessage = encrypter.CallEncrypter();
+    Encrypter encrypter;
+    std::string encryptedMessage = encrypter.CallEncrypter(msg, key.toStdString());
 
     //encode into the image
     Encoder encoder(imgPath, encryptedMessage);
     encoder.CallEncode();
 
     //tell user where image saved
-    string newPath = imgPath.replace(imgPath.find(".png"),4, "") + "_encoded.png";
+    std::string newPath = imgPath.replace(imgPath.find(".png"), 4, "") + "_encoded.png";
 
     //tell user it worked
     QMessageBox::information(this, "Success", "Message successfully encoded to: " + QString::fromStdString(newPath));
-    QMessageBox::information(this,"Key","Key Sent to aes_key.txt");
 
-    //quit when finished
-    QApplication::quit();
+    //return to select option screen when finished
+    selectOption = new SelectOption();
+    selectOption->show();
+    this->close();
+}
+
+void EncodeWindow::backToMenu() {
+    //return to select option screen when finished
+    selectOption = new SelectOption();
+    selectOption->show();
+    this->close();
 }

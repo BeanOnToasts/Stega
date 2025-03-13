@@ -291,7 +291,7 @@ Qt6Widgets_DIR:PATH=C:/Qt/6.8.2/msvc2022_64/lib/cmake/Qt6Widgets
 Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.8.2/msvc2022_64/lib/cmake/Qt6ZlibPrivate
 
 //The directory containing a CMake configuration file for Qt6.
-Qt6_DIR:PATH=Qt6_DIR-NOTFOUND
+Qt6_DIR:PATH=C:/Qt/6.8.2/msvc2022_64/lib/cmake/Qt6
 
 //The directory containing a CMake configuration file for Qt.
 Qt_DIR:PATH=Qt_DIR-NOTFOUND

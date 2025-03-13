@@ -1,29 +1,27 @@
 #ifndef DECODEWINDOW_H
 #define DECODEWINDOW_H
 
-#include <string>
-using namespace std;
-
-#include <opencv2/opencv.hpp>
-using namespace cv;
-
-#include <QPushButton>
-#include <QLineEdit>
-#include <QLabel>
-#include <QVBoxLayout>
 #include <QFileDialog>
-#include <QApplication>
-#include <QMessageBox>
+#include <QLabel>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <string>
+#include <opencv2/opencv.hpp>
 
 #include "../decode/decode.h"
 #include "../decrypt/decrypt.h"
 
+class SelectOption;
+
 class DecodeWindow final : public QWidget {
     Q_OBJECT
+
+    SelectOption *selectOption;
 
     QPushButton *selectImageButton;
     QPushButton *selectKeyButton;
     QPushButton *decodeButton;
+    QPushButton *backButton;
     QLabel *decryptedMessageLabel;
     QLabel *selectedImageLabel;
     QLabel *selectedKeyLabel;
@@ -31,13 +29,13 @@ class DecodeWindow final : public QWidget {
     QString keyPath;
     void displayImage(const QString &path) const;
 
-public:
-    explicit DecodeWindow(QWidget *parent = nullptr);
-
-private slots:
     void selectImage();
     void selectKey();
     void decodeMessage();
+    void backToMenu();
+
+public:
+    explicit DecodeWindow(QWidget *parent = nullptr);
 };
 
 #endif // DECODEWINDOW_H

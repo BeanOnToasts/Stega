@@ -3,13 +3,12 @@ project(Coursework)
 
 find_package(OpenCV REQUIRED)
 
-set(Qt6_DIR "C:/Qt/6.8.2/msvc2022_64/lib/cmake/Qt6") #wouldn't work without this
+set(CMAKE_PREFIX_PATH "C:/Qt/6.8.2/msvc2022_64")
 find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_PREFIX_PATH "C:/Qt/6.8.2/msvc2022_64")
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -37,11 +36,6 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
         set(DEBUG_SUFFIX "d")
-    endif ()
-
-    #added this but it didnt fix it
-    if (NOT DEFINED CMAKE_PREFIX_PATH)
-        set(CMAKE_PREFIX_PATH "C:/Qt/6.8.2/msvc2022_64/lib/cmake")
     endif ()
 
     set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
