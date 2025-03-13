@@ -24,7 +24,7 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     layout->addWidget(generateKeyButton);
     connect(generateKeyButton, &QPushButton::clicked,this,&EncodeWindow::generateKey);
 
-    selectKeyButton = new QPushButton("Select or Create Key", this);
+    selectKeyButton = new QPushButton("Select a Key", this);
     selectKeyButton->setProperty("class", "selectButton");
     layout->addWidget(selectKeyButton);
     connect(selectKeyButton, &QPushButton::clicked,this,&EncodeWindow::selectKey);
@@ -60,6 +60,10 @@ void EncodeWindow::generateKey() {
     Encrypter encrypter;
     key = QString::fromStdString(encrypter.CallKeyGen());
     selectedKeyLabel->setText("Key: " + key);
+    generateKeyButton->hide();
+    layout()->removeWidget(generateKeyButton);
+    delete generateKeyButton;
+    generateKeyButton = nullptr; //delete the button once used
     QMessageBox::information(this,"Key","Key Sent to aes_key.txt");
 }
 
