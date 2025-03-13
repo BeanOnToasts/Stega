@@ -1,7 +1,5 @@
 #include "decode.h"
 
-#include <iso646.h>
-
 /**
  * @brief Converts from binary to ASCII
  * @short Converts the given message from binary back into ASCII text by performing an OR operation on each

@@ -1,7 +1,6 @@
 #ifndef ENCODE_H
 #define ENCODE_H
 
-#include <iostream>
 #include <string>
 #include <bitset>
 #include <opencv2/opencv.hpp>

@@ -1,8 +1,5 @@
 #include "decrypt.h"
 
-#include <string>
-#include <opencv2/imgproc.hpp>
-
 /**
  * @brief Decrypts the message using the key
  * @short This method decrypts an encrypted message by performing an XOR operation on the encrypted message
