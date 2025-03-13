@@ -38,12 +38,18 @@ std::string Decoder::DecodeImage(cv::Mat message_img) {
     std::string currentBit;
     std::string error = "Loud incorrect buzzer sound";
 
+    //find height and width of image
+    int height = message_img.rows;
+    int width = message_img.cols;
+    //start position of the message is 10% down and 10% across
+    int startRow = height/10;
+    int startCol = width/10;
     //define the delimiter string to stop searching when the full message is found
     const std::string delimiter = "0010010000100100";
     //iterate through rows of pixels
-    for (int i = 0; i < message_img.rows; ++i) {
+    for (int i = startRow; i < message_img.rows; ++i) {
         //iterate through columns of pixels
-        for (int j = 0; j < message_img.cols; ++j) {
+        for (int j = startCol; j < message_img.cols; ++j) {
             //iterate through BGR values
             for (int k = 0; k < 3; ++k) {
                 //create variable for current LSB

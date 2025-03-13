@@ -107,7 +107,7 @@ void DecodeWindow::displayImage(const QString &path) const {
  * @short this method ensures that both a key and an image are present, then runs the decryption and decoding
  * of the image. For use on a button press.
  */
-void DecodeWindow::decodeMessage() {
+void DecodeWindow::decodeMessage() const {
 
     //makes sure there is a message and image
     if (imagePath.isEmpty()) {

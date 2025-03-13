@@ -24,13 +24,19 @@ std::string Encoder::ConvertToBin(const std::string& message) {
  * @param binaryMessage is the message to be encoded
  */
 void Encoder::EncodeImage(cv::Mat message_img, const std::string& binaryMessage) const {
+    //find height and width of image
+    int height = message_img.rows;
+    int width = message_img.cols;
+    //start position of the message is 10% down and 10% across
+    int startRow = height/10;
+    int startCol = width/10;
     //size_t is for indexing specifically which is cool I think
     size_t bitIndex = 0;
     //check image is large enough to store the message
     //iterate through rows of pixels
-    for (int i=0; i < message_img.rows; ++i) {
+    for (int i=startRow; i < message_img.rows; ++i) {
     //iterate through columns of pixels
-        for (int j=0; j < message_img.cols; ++j) {
+        for (int j=startCol; j < message_img.cols; ++j) {
         //iterate through BGR values
             for (int k=0; k < 3; ++k) {
             //check whether all the message is complete

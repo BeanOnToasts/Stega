@@ -103,6 +103,14 @@ void EncodeWindow::selectImage() {
     imagePath = QFileDialog::getOpenFileName(this, "Select Image", "../", "PNG Images (*.png)");
     if (!imagePath.isEmpty()) {
         displayImage(imagePath);
+
+        //ensures the message will fit in the image
+        const QImage selectedImage(imagePath);
+        const int height = selectedImage.height();
+        const int width = selectedImage.width();
+        const int maxMsgChars = 3*8*height*width;
+
+        messageInput->setMaxLength(maxMsgChars);
     }
 }
 

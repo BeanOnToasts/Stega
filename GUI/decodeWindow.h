@@ -31,7 +31,7 @@ class DecodeWindow final : public QWidget {
 
     void selectImage();
     void selectKey();
-    void decodeMessage();
+    void decodeMessage() const;
     void backToMenu();
 
 public:
