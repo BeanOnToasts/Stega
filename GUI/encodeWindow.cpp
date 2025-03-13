@@ -19,9 +19,26 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     messageInput->setProperty("class", "displayText");
     layout->addWidget(messageInput);
 
+    generateKeyButton = new QPushButton("Generate a Key",this);
+    generateKeyButton->setProperty("class", "selectButton");
+    layout->addWidget(generateKeyButton);
+    connect(generateKeyButton, &QPushButton::clicked,this,&EncodeWindow::generateKey);
+
+    selectKeyButton = new QPushButton("Select or Create Key", this);
+    selectKeyButton->setProperty("class", "selectButton");
+    layout->addWidget(selectKeyButton);
+    connect(selectKeyButton, &QPushButton::clicked,this,&EncodeWindow::selectKey);
+
+    selectedKeyLabel = new QLabel(this);
+    selectedKeyLabel->setMaximumHeight(30);
+    selectedKeyLabel->setAlignment(Qt::AlignTop | Qt::AlignCenter);
+    selectedKeyLabel->setText("Please select an encryption key...");
+    selectedKeyLabel->setProperty("class", "displayText");
+    layout->addWidget(selectedKeyLabel);
+
     selectImageButton = new QPushButton("Select Image", this);
-    layout->addWidget(selectImageButton);
     selectImageButton->setProperty("class", "selectButton");
+    layout->addWidget(selectImageButton);
     connect(selectImageButton, &QPushButton::clicked, this, &EncodeWindow::selectImage);
 
     selectedImageLabel = new QLabel(this);
@@ -37,6 +54,25 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     connect(encodeButton, &QPushButton::clicked, this, &EncodeWindow::encodeMessage);
 
     setLayout(layout);
+}
+
+void EncodeWindow::generateKey() {
+    Encrypter encrypter;
+    key = QString::fromStdString(encrypter.CallKeyGen());
+    selectedKeyLabel->setText("Key: " + key);
+    QMessageBox::information(this,"Key","Key Sent to aes_key.txt");
+}
+
+void EncodeWindow::selectKey() {
+    keyPath = QFileDialog::getOpenFileName(this, "Select Key File", "../", "Text Files (*.txt)");
+    QFile file(keyPath);
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+        key = in.readLine(); // Read the first line
+        file.close();
+
+        selectedKeyLabel->setText("Key: " + key);
+    }
 }
 
 /**
@@ -99,8 +135,8 @@ void EncodeWindow::encodeMessage() {
     string msg = message.toStdString();
 
     //encrypt the message
-    Encrypter encrypter(msg);
-    string encryptedMessage = encrypter.CallEncrypter();
+    Encrypter encrypter;
+    string encryptedMessage = encrypter.CallEncrypter(msg,key.toStdString());
 
     //encode into the image
     Encoder encoder(imgPath, encryptedMessage);
@@ -111,7 +147,6 @@ void EncodeWindow::encodeMessage() {
 
     //tell user it worked
     QMessageBox::information(this, "Success", "Message successfully encoded to: " + QString::fromStdString(newPath));
-    QMessageBox::information(this,"Key","Key Sent to aes_key.txt");
 
     //quit when finished
     QApplication::quit();

@@ -29,7 +29,12 @@ class EncodeWindow final : public QWidget {
     QLineEdit *messageInput;
     QPushButton *selectImageButton;
     QPushButton *encodeButton;
+    QPushButton *selectKeyButton;
+    QPushButton *generateKeyButton;
     QLabel *selectedImageLabel;
+    QLabel *selectedKeyLabel;
+    QString key;
+    QString keyPath;
     QString imagePath;
     void displayImage(const QString &path) const;
 
@@ -37,9 +42,10 @@ public:
     explicit EncodeWindow(QWidget *parent = nullptr);
 
 private slots:
+    void generateKey();
+    void selectKey();
     void selectImage();
     void encodeMessage();
-
 };
 
 #endif //ENCODEWINDOW_H

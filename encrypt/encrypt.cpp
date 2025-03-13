@@ -55,24 +55,19 @@ string Encrypter::EncryptMessage(const string& message, const string& key) {
     return encrypted_message;
 }
 
+string Encrypter::CallKeyGen() {
+    const string aes_key = GenerateKey();
+    StoreKey(aes_key);
+    return aes_key;
+}
+
 /**
  * @brief Runs private encrypter methods
  * @short This method is used to run the methods which are encapsulated for security purposes
  * @return The encrypted message
  */
-string Encrypter::CallEncrypter() {
-    aes_key = GenerateKey();
-    StoreKey(aes_key);
+string Encrypter::CallEncrypter(const string& message, const string& key_str) {
     cout << "Encrypted and key sent to " << key_filename << endl;
-    cout << EncryptMessage(message,aes_key) << endl;
-    return EncryptMessage(message, aes_key);
+    cout << EncryptMessage(message,key_str) << endl;
+    return EncryptMessage(message, key_str);
 }
-
-/**
- * @brief Constructor
- * @param message is the message to encrypt
- */
-Encrypter::Encrypter(const string& message) : key{},
-message(message) {
-}
-

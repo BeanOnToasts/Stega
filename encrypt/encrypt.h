@@ -17,7 +17,6 @@ class Encrypter {
     static constexpr int key_size = 32;
     unsigned char key[key_size]; //unsigned char so it can't be negative as I only need 0-255
     string key_filename = "aes_key.txt"; //the key will be saved to this file
-    string aes_key;
 
     string message;
 
@@ -29,8 +28,10 @@ class Encrypter {
 
     //public methods
 public:
-    Encrypter(const string& message);
-    string CallEncrypter();
+    // Encrypter(const string& message, const string& keyFile);
+    string CallEncrypter(const string& message, const string& key);
+
+    string CallKeyGen();
 };
 
 #endif //ENCRYPTION_H
