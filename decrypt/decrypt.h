@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 /**
  * @class Decrypter decrypt.h decrypt
@@ -13,21 +12,22 @@ using namespace std;
  */
 class Decrypter {
     //attributes
-    string key;
+    std::string key;
     int key_size;
-    string fileName;
+    std::string fileName;
 
-    string encryptedMessage;
-    string message;
+    std::string encryptedMessage;
+    std::string message;
 
     //private methods
-    string OpenKey(string& file_name);
+    std::string OpenKey(std::string &file_name);
 
-    string DecryptMessage(const string &encrypted_message, const string &key) const;
+    std::string DecryptMessage(const std::string &encrypted_message, const std::string &key) const;
 
     //public methods
 public:
-    string CallDecrypt() const;
-    Decrypter(const string& encrypted_message, const string& key_file);
+    std::string CallDecrypt() const;
+
+    Decrypter(const std::string &encrypted_message, const std::string &key_file);
 };
 #endif //DECRYPT_H

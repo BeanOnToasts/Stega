@@ -2,21 +2,19 @@
 #define ENCODEWINDOW_H
 
 #include <string>
-using namespace std;
 
 #include <QPushButton>
 #include <QLineEdit>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QFileDialog>
-#include <QApplication>
 #include <QMessageBox>
 
 #include <opencv2/opencv.hpp>
-using namespace cv;
 
 #include "../encode/encode.h"
 #include "../encrypt/encrypt.h"
+#include "selectOption.h"
 
 /**
  * @brief displays a window for running the encryption and encoder
@@ -25,6 +23,8 @@ using namespace cv;
  */
 class EncodeWindow final : public QWidget {
     Q_OBJECT
+
+    SelectOption *selectOption;
 
     QLineEdit *messageInput;
     QPushButton *selectImageButton;
@@ -36,6 +36,7 @@ class EncodeWindow final : public QWidget {
     QString key;
     QString keyPath;
     QString imagePath;
+
     void displayImage(const QString &path) const;
 
 public:
@@ -43,8 +44,11 @@ public:
 
 private slots:
     void generateKey();
+
     void selectKey();
+
     void selectImage();
+
     void encodeMessage();
 };
 

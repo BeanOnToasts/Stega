@@ -81,7 +81,7 @@ void DecodeWindow::selectImage() {
  * @param path is the file path of the image
  */
 void DecodeWindow::displayImage(const QString &path) const {
-    cv::Mat img = imread(path.toStdString());
+    cv::Mat img = cv::imread(path.toStdString());
 
     if (img.empty()) {
         qDebug() << "Failed to load image: " << path;
@@ -116,7 +116,7 @@ void DecodeWindow::decodeMessage() {
 
     //decode image
     Decoder decoder(imagePath.toStdString());
-    string encryptedMessage = decoder.CallDecode();
+    std::string encryptedMessage = decoder.CallDecode();
 
     //if no message was found
     if (encryptedMessage == "Loud incorrect buzzer sound") {
@@ -127,7 +127,7 @@ void DecodeWindow::decodeMessage() {
 
     //decrypt message
     Decrypter decrypter(encryptedMessage, keyPath.toStdString());
-    string decryptedMessage = decrypter.CallDecrypt();
+    std::string decryptedMessage = decrypter.CallDecrypt();
 
     //display decrypted message
     decryptedMessageLabel->setText(QString::fromStdString(decryptedMessage));

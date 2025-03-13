@@ -1,17 +1,3 @@
-#include <opencv2/opencv.hpp>
-using namespace cv;
-#include <iostream>
-using namespace std;
-
-#include <QApplication>
-#include <QFile>
-#include <QDebug>
-
-#include "encode/encode.h"
-#include "encrypt/encrypt.h"
-#include "decode/decode.h"
-#include "decrypt/decrypt.h"
-
 #include "GUI/selectOption.h"
 
 
@@ -27,11 +13,6 @@ void ApplyStyleSheet(QApplication &app) {
 }
 
 int main(int argc, char *argv[]) {
-    string fileName;
-    string message;
-    string encrypted_message;
-    int option;
-
     QApplication app(argc, argv);
     ApplyStyleSheet(app);
 

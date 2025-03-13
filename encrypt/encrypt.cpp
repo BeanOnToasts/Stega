@@ -6,12 +6,12 @@
  * a TRNG, so most devices will create PRNs
  * @return The randomly generated key
  */
-string Encrypter::GenerateKey() {
-    random_device rd; //random entropy
-    mt19937 gen(rd()); //random number with rd as the seed
-    uniform_int_distribution<int> dis(0, 255); //ensure values are between 0 and 255
+std::string Encrypter::GenerateKey() {
+    std::random_device rd; //random entropy
+    std::mt19937 gen(rd()); //random number with rd as the seed
+    std::uniform_int_distribution<int> dis(0, 255); //ensure values are between 0 and 255
 
-    string key_str;
+    std::string key_str;
     key_str.reserve(key_size*2); //reserve space for the key as hex will be twice the size
 
     for (int i = 0; i < key_size; i++) {
@@ -29,13 +29,13 @@ string Encrypter::GenerateKey() {
  * with the same name. An error is returned if the file cannot be opened (e.g. permission error)
  * @param key is the key to write
  */
-void Encrypter::StoreKey(const string& key) const {
-    string filePath = "../" + key_filename;
-    ofstream file(filePath, ios::out | ios::trunc); //open file in write mode and overwrite existing file
+void Encrypter::StoreKey(const std::string& key) const {
+    std::string filePath = "../" + key_filename;
+    std::ofstream file(filePath, std::ios::out | std::ios::trunc); //open file in write mode and overwrite existing file
     if (!file) {
-        cerr << "Can't open file " << key_filename << endl;
+        std::cerr << "Can't open file " << key_filename << std::endl;
     }
-    file << key << endl;
+    file << key << std::endl;
     file.close();
 }
 
@@ -47,16 +47,16 @@ void Encrypter::StoreKey(const string& key) const {
  * @param key is the key to encrypt with
  * @return The encrypted message
  */
-string Encrypter::EncryptMessage(const string& message, const string& key) {
-    string encrypted_message = message;
+std::string Encrypter::EncryptMessage(const std::string& message, const std::string& key) {
+    std::string encrypted_message = message;
     for (size_t i = 0; i < message.size(); i++) {
         encrypted_message[i] = message[i] ^ key[i % key.length()];
     }
     return encrypted_message;
 }
 
-string Encrypter::CallKeyGen() {
-    const string aes_key = GenerateKey();
+std::string Encrypter::CallKeyGen() {
+    const std::string aes_key = GenerateKey();
     StoreKey(aes_key);
     return aes_key;
 }
@@ -66,8 +66,8 @@ string Encrypter::CallKeyGen() {
  * @short This method is used to run the methods which are encapsulated for security purposes
  * @return The encrypted message
  */
-string Encrypter::CallEncrypter(const string& message, const string& key_str) {
-    cout << "Encrypted and key sent to " << key_filename << endl;
-    cout << EncryptMessage(message,key_str) << endl;
+std::string Encrypter::CallEncrypter(const std::string& message, const std::string& key_str) {
+    std::cout << "Encrypted and key sent to " << key_filename << std::endl;
+    std::cout << EncryptMessage(message,key_str) << std::endl;
     return EncryptMessage(message, key_str);
 }

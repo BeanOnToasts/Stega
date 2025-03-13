@@ -2,18 +2,13 @@
 #define DECODEWINDOW_H
 
 #include <string>
-using namespace std;
 
 #include <opencv2/opencv.hpp>
-using namespace cv;
 
 #include <QPushButton>
-#include <QLineEdit>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QFileDialog>
-#include <QApplication>
-#include <QMessageBox>
 
 #include "../decode/decode.h"
 #include "../decrypt/decrypt.h"

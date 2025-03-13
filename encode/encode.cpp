@@ -7,11 +7,11 @@
  * @param message is the ASCII message
  * @return The binary message
  */
-string Encoder::ConvertToBin(const string& message) {
-    string binary;
+std::string Encoder::ConvertToBin(const std::string& message) {
+    std::string binary;
     //convert each character to a binary value
     for (char c : message + "$$") {
-        binary += bitset<8>(c).to_string();
+        binary += std::bitset<8>(c).to_string();
     }
     return binary;
 }
@@ -23,7 +23,7 @@ string Encoder::ConvertToBin(const string& message) {
  * @param message_img is the image to encode
  * @param binaryMessage is the message to be encoded
  */
-void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
+void Encoder::EncodeImage(cv::Mat message_img, const std::string& binaryMessage) const {
     //size_t is for indexing specifically which is cool I think
     size_t bitIndex = 0;
     //check image is large enough to store the message
@@ -36,9 +36,9 @@ void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
             //check whether all the message is complete
                 if (bitIndex < binaryMessage.size()) {
                 //check that LSB isn't already the correct value
-                    if ((message_img.at<Vec3b>(i, j)[k] & 1) != binaryMessage[bitIndex] - '0') {
+                    if ((message_img.at<cv::Vec3b>(i, j)[k] & 1) != binaryMessage[bitIndex] - '0') {
                     //change the LSB if required
-                        message_img.at<Vec3b>(i, j)[k] ^= 1;
+                        message_img.at<cv::Vec3b>(i, j)[k] ^= 1;
                     }
                     bitIndex++;
                 }
@@ -50,7 +50,7 @@ void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
         }
     }
     imwrite(newFilePath, message_img);
-    cout << "Message encoded into " << newFilePath << endl;
+    std::cout << "Message encoded into " << newFilePath << std::endl;
 }
 
 /**
@@ -60,7 +60,7 @@ void Encoder::EncodeImage(Mat message_img, const string& binaryMessage) const {
  * @param path is the name of the file
  * @param encryptedMessage is the message to be encoded
  */
-Encoder::Encoder(const string& path, const string& encryptedMessage) :
+Encoder::Encoder(const std::string& path, const std::string& encryptedMessage) :
 fileName(path),
 message(encryptedMessage) {
 
@@ -75,10 +75,10 @@ message(encryptedMessage) {
             newFilePath = fileName + "_encoded.png";
         }
 
-        message_img = imread(filePath);
+        message_img = cv::imread(filePath);
 
         if (message_img.empty()) {
-            cerr << "Could not open or find " << filePath << ", make sure the image is a png." << endl;
+            std::cerr << "Could not open or find " << filePath << ", make sure the image is a png." << std::endl;
         }
         else {
             printf("Opened file %s, writing the message to %s\n", filePath.c_str(), newFilePath.c_str());
@@ -90,6 +90,6 @@ message(encryptedMessage) {
  * @short This method is used to run the methods which are encapsulated for security purposes
  */
 void Encoder::CallEncode() const {
-        string binaryMessage = ConvertToBin(message);
+        std::string binaryMessage = ConvertToBin(message);
         EncodeImage(message_img, binaryMessage);
     }
