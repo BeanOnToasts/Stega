@@ -59,6 +59,9 @@ void SelectOption::onDecodeClicked() {
     this->close();
 }
 
+/**
+ * @brief quits application
+ */
 void SelectOption::onQuitClicked() {
     QApplication::quit();
 }

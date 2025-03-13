@@ -63,6 +63,11 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     setLayout(layout);
 }
 
+/**
+ * @brief generates a key
+ * @short allows the user to generate a key using the generate key method in the encrypt class, for use on a
+ * button
+ */
 void EncodeWindow::generateKey() {
     Encrypter encrypter;
     key = QString::fromStdString(encrypter.CallKeyGen());
@@ -74,6 +79,10 @@ void EncodeWindow::generateKey() {
     QMessageBox::information(this, "Key", "Key Sent to aes_key.txt");
 }
 
+/**
+ * @brief generates a key
+ * @short allows the user to select a key, for use on a button
+ */
 void EncodeWindow::selectKey() {
     keyPath = QFileDialog::getOpenFileName(this, "Select Key File", "../", "Text Files (*.txt)");
     QFile file(keyPath);
@@ -164,6 +173,9 @@ void EncodeWindow::encodeMessage() {
     this->close();
 }
 
+/**
+ * @brief goes back to selection screen
+ */
 void EncodeWindow::backToMenu() {
     //return to select option screen when finished
     selectOption = new SelectOption();

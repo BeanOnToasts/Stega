@@ -139,6 +139,9 @@ void DecodeWindow::decodeMessage() {
     decryptedMessageLabel->setText(QString::fromStdString(decryptedMessage));
 }
 
+/**
+ * @brief goes back to selection screen
+ */
 void DecodeWindow::backToMenu() {
     //return to select option screen when finished
     selectOption = new SelectOption();

@@ -23,7 +23,8 @@ class SelectOption final : public QWidget {
 
     void onEncodeClicked();
     void onDecodeClicked();
-    void onQuitClicked();
+
+    static void onQuitClicked();
 
     public:
     explicit SelectOption(QWidget *parent = nullptr);
