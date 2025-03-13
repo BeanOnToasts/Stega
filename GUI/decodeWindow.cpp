@@ -1,4 +1,5 @@
 #include "decodeWindow.h"
+#include "selectOption.h"
 
 DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
     setWindowTitle("Steganography Tool");
@@ -43,6 +44,11 @@ DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
     decryptedMessageLabel->setText("Decrypted message will appear here...");
     decryptedMessageLabel->setProperty("class", "displayText");
     layout->addWidget(decryptedMessageLabel);
+
+    backButton = new QPushButton("Back to Menu", this);
+    backButton->setProperty("class", "negativeButton");
+    layout->addWidget(backButton);
+    connect(backButton, &QPushButton::clicked, this, &DecodeWindow::backToMenu);
 
     setLayout(layout);
 }
@@ -133,3 +139,9 @@ void DecodeWindow::decodeMessage() {
     decryptedMessageLabel->setText(QString::fromStdString(decryptedMessage));
 }
 
+void DecodeWindow::backToMenu() {
+    //return to select option screen when finished
+    selectOption = new SelectOption();
+    selectOption->show();
+    this->close();
+}

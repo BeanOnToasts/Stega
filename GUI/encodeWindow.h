@@ -1,20 +1,19 @@
 #ifndef ENCODEWINDOW_H
 #define ENCODEWINDOW_H
 
-#include <string>
-
-#include <QPushButton>
-#include <QLineEdit>
-#include <QLabel>
-#include <QVBoxLayout>
 #include <QFileDialog>
+#include <QLabel>
+#include <QLineEdit>
 #include <QMessageBox>
-
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <string>
 #include <opencv2/opencv.hpp>
 
 #include "../encode/encode.h"
 #include "../encrypt/encrypt.h"
-#include "selectOption.h"
+
+class SelectOption;
 
 /**
  * @brief displays a window for running the encryption and encoder
@@ -31,6 +30,7 @@ class EncodeWindow final : public QWidget {
     QPushButton *encodeButton;
     QPushButton *selectKeyButton;
     QPushButton *generateKeyButton;
+    QPushButton *backButton;
     QLabel *selectedImageLabel;
     QLabel *selectedKeyLabel;
     QString key;
@@ -39,17 +39,14 @@ class EncodeWindow final : public QWidget {
 
     void displayImage(const QString &path) const;
 
+    void generateKey();
+    void selectKey();
+    void selectImage();
+    void encodeMessage();
+    void backToMenu();
+
 public:
     explicit EncodeWindow(QWidget *parent = nullptr);
-
-private slots:
-    void generateKey();
-
-    void selectKey();
-
-    void selectImage();
-
-    void encodeMessage();
 };
 
 #endif //ENCODEWINDOW_H

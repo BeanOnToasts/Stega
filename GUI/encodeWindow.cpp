@@ -1,4 +1,5 @@
 #include "encodeWindow.h"
+#include "selectOption.h"
 
 /**
  * @brief constructor
@@ -53,6 +54,12 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     layout->addWidget(encodeButton);
     connect(encodeButton, &QPushButton::clicked, this, &EncodeWindow::encodeMessage);
 
+    backButton = new QPushButton("Back to Menu", this);
+    backButton->setProperty("class", "negativeButton");
+    layout->addWidget(backButton);
+    connect(backButton, &QPushButton::clicked, this, &EncodeWindow::backToMenu);
+
+    layout->setAlignment(Qt::AlignCenter);
     setLayout(layout);
 }
 
@@ -151,6 +158,13 @@ void EncodeWindow::encodeMessage() {
     //tell user it worked
     QMessageBox::information(this, "Success", "Message successfully encoded to: " + QString::fromStdString(newPath));
 
+    //return to select option screen when finished
+    selectOption = new SelectOption();
+    selectOption->show();
+    this->close();
+}
+
+void EncodeWindow::backToMenu() {
     //return to select option screen when finished
     selectOption = new SelectOption();
     selectOption->show();

@@ -1,8 +1,8 @@
 #ifndef DECODE_H
 #define DECODE_H
 
-#include <opencv2/opencv.hpp>
 #include <string>
+#include <opencv2/opencv.hpp>
 
 /**
  * @class Decoder decode.h decode

@@ -1,10 +1,10 @@
 #include "GUI/selectOption.h"
-
+#include <QApplication>
 
 //loads the stylesheet
 void ApplyStyleSheet(QApplication &app) {
     if (QFile file("../styles.qss"); file.open(QFile::ReadOnly)) {
-        QString styleSheet = QLatin1String(file.readAll());
+        const QString styleSheet = QLatin1String(file.readAll());
         app.setStyleSheet(styleSheet);
         file.close();
     } else {

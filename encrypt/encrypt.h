@@ -1,9 +1,9 @@
 #ifndef ENCRYPTION_H
 #define ENCRYPTION_H
 
-#include <random>
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <random>
 #include <string>
 
 /**

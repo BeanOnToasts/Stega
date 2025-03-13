@@ -1,9 +1,10 @@
 #ifndef SELECTOPTION_H
 #define SELECTOPTION_H
 
+#include <QLabel>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QLabel>
+#include <QApplication>
 
 #include "decodeWindow.h"
 #include "encodeWindow.h"
@@ -16,19 +17,16 @@ class SelectOption final : public QWidget {
 
     QPushButton *encodeButton;
     QPushButton *decodeButton;
+    QPushButton *quitButton;
     EncodeWindow *eWindow;
     DecodeWindow *dWindow;
 
-    public:
-    explicit SelectOption(QWidget *parent = nullptr);
-
-    signals:
-    void encodeSelected();
-    void decodeSelected();
-
-    private slots:
     void onEncodeClicked();
     void onDecodeClicked();
+    void onQuitClicked();
+
+    public:
+    explicit SelectOption(QWidget *parent = nullptr);
 };
 
 
