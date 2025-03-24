@@ -17,7 +17,8 @@ std::string Encrypter::GenerateKey() {
     for (int i = 0; i < key_size; i++) {
         key[i] = dis(gen); //generate key
         char hex_byte[3]; //2 hex digits and null terminator
-        sprintf_s(hex_byte, "%02x", key[i]); //convert to hex
+        std::sprintf(hex_byte, "%02x", key[i]);
+        //sprintf_s(hex_byte, "%02x", key[i]); //convert to hex
         key_str += hex_byte;
     }
     return key_str;
