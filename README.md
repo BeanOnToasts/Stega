@@ -1,5 +1,5 @@
 <p align="center">
-<img src="stegasaurus_logo.png" alt="logo for stegasaurus which I spent too long on" width="50%" height="50%">
+<img src="assets/stegasaurus_logo.png" alt="logo for stegasaurus which I spent too long on" width="50%" height="50%">
 </p>
 
 <div>

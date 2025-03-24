@@ -44,7 +44,7 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
 
     selectedImageLabel = new QLabel(this);
     selectedImageLabel->setAlignment(Qt::AlignCenter);
-    selectedImageLabel->setText("Select an image to encode");
+    selectedImageLabel->setText("Select an image to encode or leave blank to use default image");
     selectedImageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     selectedImageLabel->setStyleSheet("border: 2px dashed gray; padding: 10px;");
     layout->addWidget(selectedImageLabel);
@@ -147,8 +147,8 @@ void EncodeWindow::displayImage(const QString &path) const {
 void EncodeWindow::encodeMessage() {
     //makes sure there is a message and image
     if (imagePath.isEmpty()) {
-        QMessageBox::warning(this, "Error", "Please select an image first.");
-        return;
+        QMessageBox::warning(this, "Image", "No image selected, using default.");
+        imagePath = "../default.png";
     }
 
     QString message = messageInput->text();
