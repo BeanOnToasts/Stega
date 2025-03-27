@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
     ApplyStyleSheet(app);
 
     SelectOption window;
+    window.setProperty("class", "windows");
     window.show();
 
     return app.exec();

@@ -1,3 +1,8 @@
+.windows {
+    background-color: #262626;
+    color: white;
+}
+
 .selectButton {
     background-color: #4d7ae3;
     color: white;

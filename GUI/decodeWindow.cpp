@@ -145,6 +145,7 @@ void DecodeWindow::decodeMessage() const {
 void DecodeWindow::backToMenu() {
     //return to select option screen when finished
     selectOption = new SelectOption();
+    selectOption->setProperty("class", "windows");
     selectOption->show();
     this->close();
 }

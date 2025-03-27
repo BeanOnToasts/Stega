@@ -46,6 +46,7 @@ SelectOption::SelectOption(QWidget *parent) : QWidget(parent) {
  */
 void SelectOption::onEncodeClicked() {
     eWindow = new EncodeWindow();
+    eWindow->setProperty("class", "windows");
     eWindow->show();
     this->close();
 }
@@ -55,6 +56,7 @@ void SelectOption::onEncodeClicked() {
  */
 void SelectOption::onDecodeClicked() {
     dWindow = new DecodeWindow();
+    dWindow->setProperty("class", "windows");
     dWindow->show();
     this->close();
 }
