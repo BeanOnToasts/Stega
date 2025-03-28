@@ -1,67 +1,76 @@
 .windows {
-    background-color: #262626;
-    color: white;
+    background-color: #121212;
+    color: #E0E0E0;
 }
 
 .selectButton {
-    background-color: #4d7ae3;
+    background-color: #2196F3;
     color: white;
     font-size: 16px;
-    border: 5px solid #4d7ae3;
+    border: 5px solid #2196F3;
     border-radius: 8px;
     padding: 5px 10px;
 }
 
 .selectButton:hover {
     font-weight: bold;
-    border-color: #7da1f5;
+    border-color: #1976D2;
 }
 
 .encodeButton {
-    background-color: #256100;
+    background-color: #4CAF50;
     color: white;
     font-size: 16px;
-    border: 5px solid #256100;
+    border: 5px solid #4CAF50;
     border-radius: 8px;
     padding: 5px 10px;
 }
 
 .encodeButton:hover {
     font-weight: bold;
-    border-color: #66c928;
+    border-color: #388E3C;
 }
 
 .decodeButton {
-    background-color: #b85000;
+    background-color: #FF9800;
     color: white;
     font-size: 16px;
-    border: 5px solid #b85000;
+    border: 5px solid #FF9800;
     border-radius: 8px;
     padding: 5px 10px;
 }
 
 .decodeButton:hover {
     font-weight: bold;
-    border-color: #ff8400;
+    border-color: #E65100;
 }
 
 .negativeButton {
-    background-color: #910f00;
+    background-color: #D32F2F;
     color: white;
     font-size: 16px;
-    border: 5px solid #910f00;
+    border: 5px solid #D32F2F;
     border-radius: 8px;
     padding: 5px 10px;
 }
 
 .negativeButton:hover {
     font-weight: bold;
-    border-color: #a62b1e;
+    border-color: #B71C1C;
 }
 
 .displayText {
     font-size: 14px;
-    color: white;
-    border: 1px dashed gray;
+    color: #B3E5FC;
+    border: 1px dashed #455A64;
     padding: 5px;
+    background-color: #263238;
+}
+
+.displayImage {
+    font-size: 14px;
+    color: #B3E5FC;
+    border: 2px dashed #455A64;
+    padding: 10px;
+    background-color: #263238;
 }

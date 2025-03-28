@@ -46,7 +46,7 @@ EncodeWindow::EncodeWindow(QWidget *parent) : QWidget(parent) {
     selectedImageLabel->setAlignment(Qt::AlignCenter);
     selectedImageLabel->setText("Select an image to encode or leave blank to use default image");
     selectedImageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    selectedImageLabel->setStyleSheet("border: 2px dashed gray; padding: 10px;");
+    selectedImageLabel->setProperty("class", "displayImage");
     layout->addWidget(selectedImageLabel);
 
     encodeButton = new QPushButton("Encode", this);

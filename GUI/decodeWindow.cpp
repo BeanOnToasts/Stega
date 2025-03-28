@@ -30,7 +30,7 @@ DecodeWindow::DecodeWindow(QWidget *parent) : QWidget(parent) {
     selectedImageLabel = new QLabel(this);
     selectedImageLabel->setAlignment(Qt::AlignCenter);
     selectedImageLabel->setText("Select an image to encode");
-    selectedImageLabel->setProperty("class", "displayText");
+    selectedImageLabel->setProperty("class", "displayImage");
     layout->addWidget(selectedImageLabel);
 
     decodeButton = new QPushButton("Decode", this);
