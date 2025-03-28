@@ -1,0 +1,15 @@
+Encrypt Functions:
+- Key generated
+- Key stored to file
+- Message Encrypted
+
+Decrypt Functions:
+- Message decrypted
+
+Encode Functions:
+- Text converted to binary
+- Message encoded into image
+
+Decode Functions:
+- Convert from binary
+- Message extracted from encoded image
