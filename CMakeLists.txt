@@ -28,9 +28,7 @@ add_executable(13764108_IPA_A1 main.cpp
         GUI/encodeWindow.cpp
         GUI/encodeWindow.h
         GUI/decodeWindow.cpp
-        GUI/decodeWindow.h
-        testing/test_encoder.cpp
-        testing/test_main.cpp)
+        GUI/decodeWindow.h)
 
 target_link_libraries(13764108_IPA_A1 ${OpenCV_LIBS} Qt::Core Qt::Gui Qt::Widgets)
 
