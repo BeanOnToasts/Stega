@@ -14,6 +14,10 @@ add_executable(13764108_IPA_A1_testing test_main.cpp
         ../encode/encode.cpp
         test_decoder.cpp
         ../decode/decode.cpp
+        test_encryption.cpp
+        ../encrypt/encrypt.cpp
+        test_decryption.cpp
+        ../decrypt/decrypt.cpp
 )
 
 target_link_libraries(13764108_IPA_A1_testing ${OpenCV_LIBS}
