@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.30)
-project(Coursework)
+project(13764108_IPA_A1)
 
 find_package(OpenCV REQUIRED)
 
@@ -14,7 +14,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-add_executable(Coursework main.cpp
+add_executable(13764108_IPA_A1 main.cpp
         encrypt/encrypt.h
         encode/encode.h
         encode/encode.cpp
@@ -28,9 +28,11 @@ add_executable(Coursework main.cpp
         GUI/encodeWindow.cpp
         GUI/encodeWindow.h
         GUI/decodeWindow.cpp
-        GUI/decodeWindow.h)
+        GUI/decodeWindow.h
+        testing/test_encoder.cpp
+        testing/test_main.cpp)
 
-target_link_libraries(Coursework ${OpenCV_LIBS} Qt::Core Qt::Gui Qt::Widgets)
+target_link_libraries(13764108_IPA_A1 ${OpenCV_LIBS} Qt::Core Qt::Gui Qt::Widgets)
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
