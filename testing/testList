@@ -7,9 +7,14 @@ Decrypt Functions:
 - Message decrypted
 
 Encode Functions:
-- Text converted to binary
-- Message encoded into image
+- Loads valid file
+- File is missing
+- Loads PNG
+- Saves encoded image
 
 Decode Functions:
-- Convert from binary
-- Message extracted from encoded image
+- Loads valid file
+- Text converted to binary
+- Text converted from binary
+- Message successfully encoded into image
+- Message successfully decoded from image

@@ -79,8 +79,6 @@ Decoder::Decoder(const std::string &path) : fileName(path) {
 
     if (message_img.empty()) {
         std::cerr << "Could not open or find " << fileName << std::endl;
-    } else {
-        std::cout << "Opened file " << fileName << std::endl;
     }
 }
 

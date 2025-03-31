@@ -11,6 +11,9 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(13764108_IPA_A1_testing test_main.cpp
         test_encoder.cpp
+        ../encode/encode.cpp
+        test_decoder.cpp
+        ../decode/decode.cpp
 )
 
 target_link_libraries(13764108_IPA_A1_testing ${OpenCV_LIBS}
