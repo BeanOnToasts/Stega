@@ -4,7 +4,8 @@ Encrypt Functions:
 - Message Encrypted
 
 Decrypt Functions:
-- Message decrypted
+- Key extracted
+- Message encrypted
 
 Encode Functions:
 - Loads valid file

@@ -4,7 +4,7 @@
 
 #include "../encrypt/encrypt.h"
 
-std::string test_key_path = "../aes_key.txt";
+static const std::string test_key_path = "../aes_key.txt";
 
 //Test: Key generation
 TEST(EncryptTest, GeneratedKey) {
