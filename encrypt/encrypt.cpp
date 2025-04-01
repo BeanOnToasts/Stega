@@ -67,7 +67,5 @@ std::string Encrypter::CallKeyGen() {
  * @return The encrypted message
  */
 std::string Encrypter::CallEncrypter(const std::string& message, const std::string& key_str) {
-    std::cout << "Encrypted and key sent to " << key_filename << std::endl;
-    std::cout << EncryptMessage(message,key_str) << std::endl;
     return EncryptMessage(message, key_str);
 }

@@ -56,7 +56,6 @@ void Encoder::EncodeImage(cv::Mat message_img, const std::string& binaryMessage)
         }
     }
     imwrite(newFilePath, message_img);
-    std::cout << "Message encoded into " << newFilePath << std::endl;
 }
 
 /**
@@ -85,9 +84,6 @@ message(encryptedMessage) {
 
         if (message_img.empty()) {
             std::cerr << "Could not open or find " << filePath << ", make sure the image is a png." << std::endl;
-        }
-        else {
-            printf("Opened file %s, writing the message to %s\n", filePath.c_str(), newFilePath.c_str());
         }
     }
 

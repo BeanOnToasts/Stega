@@ -3,7 +3,7 @@
 
 //loads the stylesheet
 void ApplyStyleSheet(QApplication &app) {
-    if (QFile file("../styles.qss"); file.open(QFile::ReadOnly)) {
+    if (QFile file("../assets/styles.qss"); file.open(QFile::ReadOnly)) {
         const QString styleSheet = QLatin1String(file.readAll());
         app.setStyleSheet(styleSheet);
         file.close();
