@@ -17,7 +17,7 @@ StegaSaurus is a powerful steganography tool that securely hides messages using 
 
 
 | Feature       | Description                                                                          |
-|---------------|--------------------------------------------------------------------------------------|
+| ------------- | ------------------------------------------------------------------------------------ |
 | ***GUI***     | The tool comes with an easy to use GUI created with Qt                               |
 | ***Key Gen*** | Generate a key and send it to a text file for later encryption/decryption            |
 | ***Encrypt*** | Encrypt a message using the key and a bitwise XOR operation                          |
@@ -111,11 +111,13 @@ When the tool is launched, a window with three options will appear:
 
 ---
 
-## Unit Testing
+## Testing
+
+### Unit Testing
 
 
-| Test Item  | Test Case        | Description                                                     | Expected Outcome                              | Pass/Fail |
-|------------|------------------|-----------------------------------------------------------------|-----------------------------------------------|-----------|
+| Test Item  | Test Case        | Description                                                     | Expected Outcome                              | Pass/Fail  |
+| ---------- | ---------------- | --------------------------------------------------------------- | --------------------------------------------- | ---------- |
 | encode     | ValidImage       | The encode function ensures a valid image is used               | encoder launches                              | <center>✅ |
 | encode     | ImageCreation    | The encoder correctly creates the encoded image with _encoded   | "image_name"_encoded.png exists               | <center>✅ |
 | encode     | ImageEncode      | The encoder generated a new, encoded image                      | source image and encoded image are different  | <center>✅ |
@@ -126,3 +128,18 @@ When the tool is launched, a window with three options will appear:
 | encryption | EncryptedMessage | The message is encrypted                                        | encrypted message exists                      | <center>✅ |
 | decryption | ValidKey         | The decrypter successfully opens a key file such as aes_key.txt | decrypter launches                            | <center>✅ |
 | decryption | DecryptedMessage | The decrypter decrypts the message correctly                    | test message is the same as decrypted message | <center>✅ |
+
+### Integration Testing
+
+
+| Test Case             | Description                                                                                         | Pass/Fail |
+|-----------------------|-----------------------------------------------------------------------------------------------------|-----------|
+| GUI Navigation        | User is able to open the encode or decode window from the main page                                 | <center>✅ |
+| Encode Image Input    | User is able to select an image using the encode window                                             | <center>✅ |
+| Encode Key Generation | User is able to generate an encryption key use the generate key button                              | <center>✅ |
+| Encode Key Input      | User is able to select a pre-existing key using the associated button                               | <center>✅ |
+| Encode Message Input  | User can enter a message into the text box                                                          | <center>✅ |
+| Encode                | User can encode using the image, key and message provided. If no image is provided, use the default | <center>✅ |
+| Decode Image Input    | User can input an encoded image using the decode window                                             | <center>✅ |
+| Decode Key Input      | User can select an encryption key to decrypt with                                                   | <center>✅ |
+| Decode                | User can decode the message out of the image and read the message in the text box at the bottom     | <center>✅ |
