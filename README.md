@@ -1,5 +1,6 @@
 <p align="center">
 <img src="assets/stegasaurus_logo.png" alt="logo for stegasaurus which I spent too long on" width="50%" height="50%">
+
 </p>
 
 <div>
@@ -50,41 +51,48 @@ The user can select an image and a decryption key. The secret message will then 
 ## Installation
 
 1. CMake Version
+
    In the CMakeLists.txt, change _cmake_minimum_required(VERSION 3.30)_ to your current version
    ![img.png](assets/cmake_version_eg.png)
-
 2. Clone Git Repo
-    ```
+
+   ```
    git clone JAMES DONT FORGET TO PUT THE LINK HERE
    cd 13764108_IPA_A1
    ```
 3. Create build directory
-    ```
+
+   ```
    mkdir build && cd build
    ```
 4. Configure CMake
-    ```
+
+   ```
    cmake ..
    ```
 5. Build StegaSaurus Tool
-    ```
+
+   ```
    cmake --build .
    ```
-   
 6. Run Tool
+
    ```
    ./13764108_IPA_A1
    ```
+
 ---
 
 ## How to Operate
 
 When the tool is launched, a window with three options will appear:
+
 1. Encode
 2. Decode
 3. Exit
 
 ### 1. Encode
+
 - Use the **select image** button to open your file system and select a PNG image. If not is selected, the _default.png_ image is used
 - Use the **generate key** button to generate a random secure key and send it to a text file named _aes_key.txt_
 - Use the **select key** button to select a pre-existing key inside a text fie
@@ -92,6 +100,11 @@ When the tool is launched, a window with three options will appear:
 - Use the **encode image** button to generate the encoded image, which will be sent to _yourImageName_encoded.png_
 
 ### 2. Decode
+
 - Use the **select image** button to open your file system and select an encoded PNG image
 - Use the **select key** button to select a text file containing a decryption key such as _aes_key.txt_
 - Use the **decode image** button to decode and decrypt the message within the image and display it within the text box
+
+## Video Tutorial
+
+[StegaSaurus Video Tutorial](https://youtu.be/OfwEEVoCsmY)
