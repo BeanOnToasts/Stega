@@ -49,24 +49,32 @@ The user can select an image and a decryption key. The secret message will then 
 
 ## Installation
 
-1. Clone Git Repo
+1. CMake Version
+   In the CMakeLists.txt, change _cmake_minimum_required(VERSION 3.30)_ to your current version
+   ![img.png](assets/cmake_version_eg.png)
+
+2. Clone Git Repo
     ```
    git clone JAMES DONT FORGET TO PUT THE LINK HERE
    cd 13764108_IPA_A1
    ```
-2. Create build directory
+3. Create build directory
     ```
    mkdir build && cd build
    ```
-3. Configure CMake
+4. Configure CMake
     ```
    cmake ..
    ```
-4. Build StegaSaurus Tool
+5. Build StegaSaurus Tool
     ```
-   cmake build .
+   cmake --build .
    ```
    
+6. Run Tool
+   ```
+   ./13764108_IPA_A1
+   ```
 ---
 
 ## How to Operate

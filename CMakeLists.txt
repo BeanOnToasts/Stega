@@ -30,7 +30,17 @@ add_executable(13764108_IPA_A1 main.cpp
         GUI/decodeWindow.cpp
         GUI/decodeWindow.h)
 
-target_link_libraries(13764108_IPA_A1 ${OpenCV_LIBS} Qt::Core Qt::Gui Qt::Widgets)
+message(STATUS "OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
+message(STATUS "OpenCV_LIBS: ${OpenCV_LIBS}")
+
+target_link_libraries(13764108_IPA_A1
+        ${OpenCV_LIBS}
+        opencv_core
+        opencv_imgproc
+        opencv_imgcodecs
+        Qt::Core
+        Qt::Gui
+        Qt::Widgets)
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
