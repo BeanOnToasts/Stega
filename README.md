@@ -17,7 +17,7 @@ StegaSaurus is a powerful steganography tool that securely hides messages using 
 
 
 | Feature       | Description                                                                          |
-| ------------- | ------------------------------------------------------------------------------------ |
+|---------------|--------------------------------------------------------------------------------------|
 | ***GUI***     | The tool comes with an easy to use GUI created with Qt                               |
 | ***Key Gen*** | Generate a key and send it to a text file for later encryption/decryption            |
 | ***Encrypt*** | Encrypt a message using the key and a bitwise XOR operation                          |
@@ -105,6 +105,24 @@ When the tool is launched, a window with three options will appear:
 - Use the **select key** button to select a text file containing a decryption key such as _aes_key.txt_
 - Use the **decode image** button to decode and decrypt the message within the image and display it within the text box
 
-## Video Tutorial
+### Video Tutorial
 
 [StegaSaurus Video Tutorial](https://youtu.be/OfwEEVoCsmY)
+
+---
+
+## Unit Testing
+
+
+| Test Item  | Test Case        | Description                                                     | Expected Outcome                              | Pass/Fail |
+|------------|------------------|-----------------------------------------------------------------|-----------------------------------------------|-----------|
+| encode     | ValidImage       | The encode function ensures a valid image is used               | encoder launches                              | <center>✅ |
+| encode     | ImageCreation    | The encoder correctly creates the encoded image with _encoded   | "image_name"_encoded.png exists               | <center>✅ |
+| encode     | ImageEncode      | The encoder generated a new, encoded image                      | source image and encoded image are different  | <center>✅ |
+| decode     | ValidImage       | The decoder ensures a valid image is used                       | decoder launches                              | <center>✅ |
+| decode     | ImageDecode      | The decoder successfully extracts the message from the image    | test message is the same as extracted message | <center>✅ |
+| encryption | GeneratedKey     | The key is successfully generated                               | key generation successfully runs              | <center>✅ |
+| encryption | StoredKey        | The key is stored in a text file names aes_key.txt              | key file exists                               | <center>✅ |
+| encryption | EncryptedMessage | The message is encrypted                                        | encrypted message exists                      | <center>✅ |
+| decryption | ValidKey         | The decrypter successfully opens a key file such as aes_key.txt | decrypter launches                            | <center>✅ |
+| decryption | DecryptedMessage | The decrypter decrypts the message correctly                    | test message is the same as decrypted message | <center>✅ |
