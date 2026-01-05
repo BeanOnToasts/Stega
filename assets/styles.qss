@@ -1,0 +1,76 @@
+.windows {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+.selectButton {
+    background-color: #2196F3;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #2196F3;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.selectButton:hover {
+    font-weight: bold;
+    border-color: #1976D2;
+}
+
+.encodeButton {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #4CAF50;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.encodeButton:hover {
+    font-weight: bold;
+    border-color: #388E3C;
+}
+
+.decodeButton {
+    background-color: #FF9800;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #FF9800;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.decodeButton:hover {
+    font-weight: bold;
+    border-color: #E65100;
+}
+
+.negativeButton {
+    background-color: #D32F2F;
+    color: white;
+    font-size: 16px;
+    border: 5px solid #D32F2F;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.negativeButton:hover {
+    font-weight: bold;
+    border-color: #B71C1C;
+}
+
+.displayText {
+    font-size: 14px;
+    color: #B3E5FC;
+    border: 1px dashed #455A64;
+    padding: 5px;
+    background-color: #263238;
+}
+
+.displayImage {
+    font-size: 14px;
+    color: #B3E5FC;
+    border: 2px dashed #455A64;
+    padding: 10px;
+    background-color: #263238;
+}
