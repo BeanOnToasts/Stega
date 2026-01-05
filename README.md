@@ -1,3 +1,5 @@
+This is a copy of the steganography tool I made in my second year of university.
+***
 <p align="center">
 <img src="assets/stegasaurus_logo.png" alt="logo for stegasaurus which I spent too long on" width="50%" height="50%">
 
